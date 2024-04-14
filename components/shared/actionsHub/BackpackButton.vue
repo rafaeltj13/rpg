@@ -4,15 +4,17 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import { Icon } from "@iconify/vue";
 </script>
 
 <template>
   <HoverCard>
     <HoverCardTrigger
-      ><img
-        src="/assets/images/backpack.webp"
-        class="h-14 w-14 rounded-xl hover:scale-110 scale-100 transition-all cursor-pointer"
-      ></img></HoverCardTrigger>
+      ><div
+        class="w-12 h-12 flex items-center justify-center cursor-pointer border rounded-xl transition-all hover:scale-110"
+      >
+        <Icon icon="game-icons:backpack" class="h-10 w-10" /></div
+    ></img></HoverCardTrigger>
     <HoverCardContent>
       <div class="w-full text-xl">Backpack</div>
     </HoverCardContent>

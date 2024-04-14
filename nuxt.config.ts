@@ -1,7 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "shadcn-nuxt", "@nuxtjs/color-mode"],
+  app: {
+    pageTransition: { name: "page", mode: "out-in" },
+  },
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "shadcn-nuxt",
+    "@nuxtjs/color-mode",
+    "@nuxtjs/google-fonts",
+  ],
   shadcn: {
     /**
      * Prefix for all the imported component
@@ -15,5 +23,10 @@ export default defineNuxtConfig({
   },
   colorMode: {
     classSuffix: "",
+  },
+  googleFonts: {
+    families: {
+      "Kode Mono": [400, 500, 600, 700],
+    },
   },
 });

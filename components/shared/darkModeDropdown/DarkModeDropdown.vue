@@ -10,11 +10,11 @@ const colorMode = useColorMode();
       <DropdownMenuTrigger as-child>
         <Button variant="ghost" class="h-12">
           <Icon
-            icon="ic:round-dark-mode"
+            icon="game-icons:moon-bats"
             class="h-[1.5rem] w-[1.5rem] hover:scale-110 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
           />
           <Icon
-            icon="ic:round-light-mode"
+            icon="game-icons:sun"
             class="absolute h-[1.5rem] hover:scale-110 w-[1.5rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
           />
           <span class="sr-only">Toggle theme</span>
