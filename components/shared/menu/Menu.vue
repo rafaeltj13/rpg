@@ -11,14 +11,16 @@ import { Icon } from "@iconify/vue";
             icon="ic:baseline-format-list-bulleted"
             class="h-[1.5rem] w-[1.5rem]"
           />
-          <span class="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start">
         <NuxtLink class="cursor-pointer" to="/">
           <DropdownMenuItem>
-            <Icon icon="game-icons:house" class="h-[1.5rem] w-[1.5rem] mr-2" />
-            <p class="text-md">Home</p>
+            <Icon
+              icon="game-icons:village"
+              class="h-[1.5rem] w-[1.5rem] mr-2"
+            />
+            <p class="text-md">City</p>
           </DropdownMenuItem>
         </NuxtLink>
         <NuxtLink class="cursor-pointer" to="/quests">
@@ -41,11 +43,8 @@ import { Icon } from "@iconify/vue";
         </NuxtLink>
         <NuxtLink class="cursor-pointer" to="/skills">
           <DropdownMenuItem>
-            <Icon
-              icon="game-icons:book-pile"
-              class="h-[1.5rem] w-[1.5rem] mr-2"
-            />
-            <p class="text-md">Skills</p>
+            <Icon icon="game-icons:skills" class="h-[1.5rem] w-[1.5rem] mr-2" />
+            <p class="text-md">Attributes</p>
           </DropdownMenuItem>
         </NuxtLink>
         <NuxtLink class="cursor-pointer" to="/backpack">
