@@ -17,9 +17,8 @@ definePageMeta({
       <p
         class="md:max-w-[600px] text-center mt-12 text-2xl text-primary font-['Montserrat']"
       >
-        Whether you have minutes or hours, enjoy equal progress in our
-        minimalist RPG. Experience gaming that fits your schedule, without
-        missing a beat.
+        Whether you have minutes or hours, enjoy equal progress in this RPG.
+        Experience gaming that fits your schedule, without missing a beat.
       </p>
       <LoginButton class="mt-12" />
     </div>

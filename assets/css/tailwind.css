@@ -4,29 +4,29 @@
 
 @layer base {
   :root {
-    --background: #eeeeee;
-    --foreground: #304d30;
+    --background: #eef7fb;
+    --foreground: #292524;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --popover: #eeeeee;
-    --popover-foreground: #304d30;
+    --popover: #eef7fb;
+    --popover-foreground: #292524;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
 
-    --border: #304d30;
-    --input: #b6c4b6;
+    --border: #314e31;
+    --input: #292524;
 
-    --primary: #304d30;
-    --primary-foreground: #b6c4b6;
+    --primary: #314e31;
+    --primary-foreground: #eef7fb;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: #b5c4b5;
+    --secondary-foreground: #eef7fb;
 
-    --accent: #304d30;
-    --accent-foreground: #eeeeee;
+    --accent: #f18f01;
+    --accent-foreground: #eef7fb;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -35,33 +35,33 @@
 
     --radius: 12px;
 
-    --actions: #eeeeee;
-    --actions-foreground: #eeeeee;
+    --actions: #eef7fb;
+    --actions-foreground: #f18f01;
   }
 
   .dark {
     --background: #040d12;
-    --foreground: #008170;
+    --foreground: #dbd7d6;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
     --popover: #040d12;
-    --popover-foreground: #008170;
+    --popover-foreground: #dbd7d6;
 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
 
-    --border: #008170;
-    --input: #93b1a6;
+    --border: #b1ceb1;
+    --input: #dbd7d6;
 
-    --primary: #008170;
-    --primary-foreground: #93b1a6;
+    --primary: #b1ceb1;
+    --primary-foreground: #040d12;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: #3b4a3b;
+    --secondary-foreground: #dbd7d6;
 
-    --accent: #008170;
+    --accent: #fe9f10;
     --accent-foreground: #040d12;
 
     --destructive: 0 62.8% 30.6%;
@@ -70,7 +70,7 @@
     --ring: 212.7 26.8% 83.9%;
 
     --actions: #040d12;
-    --actions-foreground: #040d12;
+    --actions-foreground: #fe9f10;
   }
 }
 
@@ -80,7 +80,5 @@
   }
   body {
     @apply bg-background text-foreground;
-
-    line-height: 1.25;
   }
 }

@@ -10,7 +10,7 @@ import { Icon } from "@iconify/vue";
       <SharedActionsHubQuestButton />
       <SharedActionsHubMapButton />
       <div
-        class="h-16 w-16 text-primary border rounded-xl hover:scale-125 scale-100 transition-all cursor-pointer flex items-center justify-center shadow-lg hover:bg-foreground hover:text-actions"
+        class="h-16 w-16 text-primary border rounded-xl hover:scale-125 scale-100 transition-all cursor-pointer flex items-center justify-center shadow-lg hover:bg-actions-foreground hover:text-background"
       >
         <Icon icon="game-icons:broadsword" class="w-12 h-12" />
       </div>

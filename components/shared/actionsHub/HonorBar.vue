@@ -12,7 +12,7 @@ const props = defineProps<{
       :class="`h-4 bg-indigo-700 rounded-lg flex items-center justify-center`"
     ></div>
     <div class="absolute w-full top-0 flex items-center justify-center">
-      <p class="text-xs text-actions dark:text-primary-foreground">
+      <p class="text-xs text-background dark:text-foreground">
         {{ props.current }} / {{ props.max }}
       </p>
     </div>
