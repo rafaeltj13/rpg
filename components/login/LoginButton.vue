@@ -4,6 +4,6 @@ import { Icon } from "@iconify/vue";
 
 <template>
   <NuxtLink to="/login">
-    <Button variant="default" size="lg"> Login </Button>
+    <Button variant="default" size="lg"> Play now! </Button>
   </NuxtLink>
 </template>

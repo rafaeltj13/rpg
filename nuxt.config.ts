@@ -27,6 +27,7 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       "Kode Mono": [400, 500, 600, 700],
+      Montserrat: [400, 500, 600, 700],
     },
   },
 });
