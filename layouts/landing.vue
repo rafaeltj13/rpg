@@ -1,7 +1,6 @@
 <template>
   <LandingHeader />
-  <div class="">
+  <div class="w-full overflow-x-hidden">
     <slot />
   </div>
-  <SharedDarkModeDropdown class="fixed bottom-6 right-6 z-50" />
 </template>

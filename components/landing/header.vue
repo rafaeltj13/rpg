@@ -23,6 +23,15 @@ onUnmounted(() => {
     }"
   >
     <div><h1 class="text-2xl">RPG</h1></div>
+    <div class="flex gap-2 items-center">
+      <Button :variant="isScrollAtTop ? 'ghost' : 'link'" size="lg"
+        >Classes</Button
+      >
+      <Button :variant="isScrollAtTop ? 'ghost' : 'link'" size="lg"
+        >About</Button
+      >
+    </div>
     <LoginButton />
   </div>
+  <SharedDarkModeDropdown class="fixed bottom-6 left-6 z-50" />
 </template>
