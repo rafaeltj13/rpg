@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[60vh] grid grid-rows-1 grid-cols-2 grid-flow-col">
+  <div class="w-full h-[30vh] grid grid-rows-1 grid-cols-2 grid-flow-col">
     <div class="col-span-1 flex flex-col items-center justify-center">
       <SharedClassItem class="mb-4" icon="bowie-knife" />
       <div class="grid grid-rows-1 grid-flow-col grid-col-2 gap-4">

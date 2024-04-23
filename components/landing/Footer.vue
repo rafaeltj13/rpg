@@ -19,10 +19,12 @@ import { Icon } from "@iconify/vue";
           icon="fa:instagram"
           class="w-6 h-6 transition-all hover:scale-110 hover:text-accent cursor-pointer"
         />
-        <Icon
-          icon="fa:reddit"
-          class="w-6 h-6 transition-all hover:scale-110 hover:text-accent cursor-pointer"
-        />
+        <NuxtLink href="https://github.com/rafaeltj13">
+          <Icon
+            icon="fa:reddit"
+            class="w-6 h-6 transition-all hover:scale-110 hover:text-accent cursor-pointer"
+          />
+        </NuxtLink>
       </div>
     </div>
   </div>
