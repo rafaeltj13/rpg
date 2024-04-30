@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-[426px] gap-2 bg-actions text-primary rounded-xl p-3 flex flex-col justify-between items border shadow-lg"
+    class="w-[426px] gap-3 bg-actions text-primary rounded-xl p-3 flex flex-col justify-between items border shadow-lg"
   >
     <div class="flex items-center justify-between">
       <SharedActionsHubQuestButton />

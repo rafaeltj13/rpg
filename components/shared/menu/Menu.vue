@@ -14,7 +14,7 @@ import { Icon } from "@iconify/vue";
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start">
-        <NuxtLink class="cursor-pointer" to="/">
+        <NuxtLink class="cursor-pointer" to="/city/sole">
           <DropdownMenuItem>
             <Icon
               icon="game-icons:village"
@@ -26,7 +26,7 @@ import { Icon } from "@iconify/vue";
         <NuxtLink class="cursor-pointer" to="/quests">
           <DropdownMenuItem>
             <Icon
-              icon="game-icons:checklist"
+              icon="game-icons:stabbed-note"
               class="h-[1.5rem] w-[1.5rem] mr-2"
             />
             <p class="text-md">Quests</p>

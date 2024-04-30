@@ -11,20 +11,20 @@ import { Icon } from "@iconify/vue";
     >
       <p class="text-3xl">RPG</p>
       <div class="flex items-center gap-4">
-        <Icon
-          icon="fa:github"
-          class="w-6 h-6 transition-all hover:scale-110 hover:text-accent cursor-pointer"
-        />
+        <NuxtLink href="https://github.com/rafaeltj13">
+          <Icon
+            icon="fa:github"
+            class="w-6 h-6 transition-all hover:scale-110 hover:text-accent cursor-pointer"
+          />
+        </NuxtLink>
         <Icon
           icon="fa:instagram"
           class="w-6 h-6 transition-all hover:scale-110 hover:text-accent cursor-pointer"
         />
-        <NuxtLink href="https://github.com/rafaeltj13">
-          <Icon
-            icon="fa:reddit"
-            class="w-6 h-6 transition-all hover:scale-110 hover:text-accent cursor-pointer"
-          />
-        </NuxtLink>
+        <Icon
+          icon="fa:reddit"
+          class="w-6 h-6 transition-all hover:scale-110 hover:text-accent cursor-pointer"
+        />
       </div>
     </div>
   </div>

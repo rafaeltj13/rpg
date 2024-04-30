@@ -11,7 +11,7 @@
       </div>
     </div>
   </ClientOnly>
-  <div class="h-[90vh] overflow-hidden max-w-[1366px] mx-auto p-4">
+  <div class="h-[90vh] overflow-y-hidden max-w-[1366px] mx-auto p-4 !pt-20">
     <slot />
   </div>
   <div class="absolute left-1/2 transform -translate-x-1/2 bottom-8">
