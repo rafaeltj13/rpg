@@ -13,6 +13,7 @@ const npcs = [];
       <CityTraining />
       <CityHotel />
       <CityMailbox />
+      <CityTravel />
     </div>
   </div>
 </template>
