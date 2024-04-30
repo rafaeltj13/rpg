@@ -6,7 +6,7 @@ const availableQuests = 40;
 
 <template>
   <NuxtLink
-    to="/city/quests"
+    to="/quests"
     :class="{
       'col-span-1': !availableQuests,
       'col-span-2 bg-primary': availableQuests > 0,

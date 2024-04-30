@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 
-const availableMails = 0;
+const availableMails = 20;
 </script>
 
 <template>

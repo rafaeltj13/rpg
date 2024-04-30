@@ -1,19 +1,25 @@
 <script setup lang="ts">
+const cityName = "Sole";
+
+useHead({
+  title: `${cityName} - miniRPG`,
+});
+
 const npcs = [];
 </script>
 
 <template>
   <div class="">
-    <h1 class="text-[64px] text-primary font-semibold pb-8">Sole</h1>
+    <h1 class="text-[64px] text-primary font-bold pb-8">{{ cityName }}</h1>
     <div class="grid grid-cols-6 grid-flow-row gap-6">
-      <CityMerchant />
       <CityQuests />
-      <CityExplore />
+      <CityMerchant />
       <CityStudy />
       <CityTraining />
       <CityHotel />
-      <CityMailbox />
+      <CityExplore />
       <CityTravel />
+      <CityMailbox />
     </div>
   </div>
 </template>

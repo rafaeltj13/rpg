@@ -14,13 +14,10 @@ import { Icon } from "@iconify/vue";
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start">
-        <NuxtLink class="cursor-pointer" to="/city/sole">
+        <NuxtLink class="cursor-pointer" to="/city">
           <DropdownMenuItem>
-            <Icon
-              icon="game-icons:village"
-              class="h-[1.5rem] w-[1.5rem] mr-2"
-            />
-            <p class="text-md">City</p>
+            <Icon icon="game-icons:house" class="h-[1.5rem] w-[1.5rem] mr-2" />
+            <p class="text-md">Resume</p>
           </DropdownMenuItem>
         </NuxtLink>
         <NuxtLink class="cursor-pointer" to="/quests">
