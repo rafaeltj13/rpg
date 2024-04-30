@@ -4,11 +4,11 @@ import {
   DrawerClose,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { Icon } from "@iconify/vue";
 
 const props = defineProps<{
   quest: {
@@ -18,17 +18,48 @@ const props = defineProps<{
     gold: number;
   };
 }>();
+
+const state: "available" | "inProgress" | "done" = ref("available");
+
+if (Math.random() < 0.45) {
+  state.value = "done";
+} else if (Math.random() > 0.65) {
+  state.value = "inProgress";
+}
 </script>
 
 <template>
   <div
-    class="col-span-3 h-40 border p-4 rounded-lg hover:scale-105 scale-100 transition-all cursor-pointer flex items-center justify-between shadow-lg hover:bg-actions-foreground hover:text-background gap-4"
+    :class="{
+      'bg-background': state === 'available',
+      'bg-primary': state === 'done',
+      'bg-secondary': state === 'inProgress',
+    }"
+    class="col-span-4 h-40 border p-4 rounded-lg hover:scale-105 scale-100 transition-all cursor-pointer flex items-center justify-between shadow-lg hover:bg-actions-foreground hover:text-background gap-4"
   >
     <Drawer>
       <DrawerTrigger>
-        <div class="flex flex-col items-start gap-4 text-left">
-          <p class="text-xl font-semibold">{{ quest.title }}</p>
-          <p class="text-md text-left">{{ quest.description }}</p>
+        <div class="flex items-center justify-between gap-8">
+          <div class="flex flex-col items-start gap-4 text-left">
+            <p class="text-xl font-semibold">{{ quest.title }}</p>
+            <p class="text-md text-left">{{ quest.description }}</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <p class="text-xl font-semibold">
+              {{ quest.honor }}
+              <Icon
+                icon="game-icons:vertical-banner"
+                class="h-[1.5rem] w-[1.5rem] mx-auto"
+              />
+            </p>
+            <p class="text-xl font-semibold">
+              {{ quest.gold }}
+              <Icon
+                icon="game-icons:two-coins"
+                class="h-[1.5rem] w-[1.5rem] mx-auto"
+              />
+            </p>
+          </div>
         </div>
       </DrawerTrigger>
       <DrawerContent>
