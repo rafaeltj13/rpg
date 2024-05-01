@@ -16,24 +16,17 @@ const props = defineProps<{
     description: string;
     honor: number;
     gold: number;
+    state: "available" | "inProgress" | "done";
   };
 }>();
-
-const state: "available" | "inProgress" | "done" = ref("available");
-
-if (Math.random() < 0.45) {
-  state.value = "done";
-} else if (Math.random() > 0.65) {
-  state.value = "inProgress";
-}
 </script>
 
 <template>
   <div
     :class="{
-      'bg-background': state === 'available',
-      'bg-primary': state === 'done',
-      'bg-secondary': state === 'inProgress',
+      'bg-background': quest.state === 'available',
+      'bg-primary': quest.state === 'done',
+      'bg-secondary': quest.state === 'inProgress',
     }"
     class="col-span-4 h-40 border p-4 rounded-lg hover:scale-105 scale-100 transition-all cursor-pointer flex items-center justify-between shadow-lg hover:bg-actions-foreground hover:text-background gap-4"
   >
