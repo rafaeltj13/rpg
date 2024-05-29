@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full h-full lg:h-[50vh] flex flex-col-reverse lg:grid lg:grid-rows-1 lg:grid-cols-2 lg:grid-flow-col my-12 lg:my-0"
+    class="w-full h-full lg:h-[50vh] flex flex-col-reverse lg:grid lg:grid-rows-1 lg:grid-cols-2 lg:grid-flow-col my-16"
   >
     <div
       class="col-span-1 flex flex-col items-center lg:items-start justify-center gap-4 pt-8 lg:pt-0"

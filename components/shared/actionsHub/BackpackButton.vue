@@ -11,9 +11,9 @@ import { Icon } from "@iconify/vue";
   <HoverCard>
     <HoverCardTrigger
       ><div
-        class="w-16 h-16 flex items-center justify-center cursor-pointer border rounded-xl transition-all hover:scale-110 shadow-md hover:bg-actions-foreground hover:text-background"
+        class="w-8 h-8 flex items-center justify-center cursor-pointer border rounded-md transition-all hover:scale-110 shadow-md hover:bg-actions-foreground hover:text-background"
       >
-        <Icon icon="game-icons:backpack" class="w-12 h-12" /></div
+        <Icon icon="game-icons:backpack" class="w-6 h-6" /></div
     ></img></HoverCardTrigger>
     <HoverCardContent>
       <div class="w-full text-xl">Backpack</div>

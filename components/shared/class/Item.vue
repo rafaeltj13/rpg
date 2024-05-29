@@ -10,6 +10,6 @@ const props = defineProps<{
   <div
     class="h-20 w-20 text-primary border rounded-xl hover:scale-125 scale-100 transition-all cursor-pointer flex items-center justify-center shadow-lg hover:bg-actions-foreground hover:text-background"
   >
-    <Icon :icon="`game-icons:${props.icon}`" class="w-16 h-16" />
+    <Icon :icon="`game-icons:${props.icon}`" class="w-8 h-8" />
   </div>
 </template>

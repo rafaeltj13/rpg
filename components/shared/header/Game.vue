@@ -29,13 +29,6 @@ onUnmounted(() => {
       <p class="font-bold">miniRPG</p>
     </div>
     <div class="flex items-center gap-4">
-      <div class="flex items-center gap-2">
-        <p>200</p>
-        <Icon
-          icon="game-icons:two-coins"
-          class="h-[1.5rem] w-[1.5rem] mx-auto"
-        />
-      </div>
       <SharedDarkModeDropdown />
     </div>
   </div>
