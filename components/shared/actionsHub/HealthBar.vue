@@ -6,7 +6,9 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="h-full w-12 bg-red-900 rounded-md relative shadow-md">
+  <div
+    class="h-full w-12 bg-red-900 border-2 border-red-600 rounded-lg relative shadow-md"
+  >
     <div
       :style="`height: ${((props.current * 100) / props.max).toFixed(0)}%`"
       class="absolute bg-rose-700 rounded-md w-full bottom-0"

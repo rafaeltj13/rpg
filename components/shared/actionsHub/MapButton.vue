@@ -11,7 +11,7 @@ import { Icon } from "@iconify/vue";
   <HoverCard>
     <HoverCardTrigger
       ><div
-        class="w-8 h-8 flex items-center justify-center cursor-pointer border rounded-md transition-all hover:scale-110 shadow-md hover:bg-actions-foreground hover:text-background"
+        class="w-10 h-10 flex items-center justify-center cursor-pointer border-2 rounded-md transition-all hover:scale-110 shadow-md hover:bg-actions-foreground hover:text-background"
       >
         <Icon icon="game-icons:treasure-map" class="w-6 h-6" /></div
     ></HoverCardTrigger>

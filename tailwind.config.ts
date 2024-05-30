@@ -84,7 +84,7 @@ module.exports = {
         "collapsible-up": "collapsible-up 0.2s ease-in-out",
       },
       fontFamily: {
-        sans: ["Kode Mono", "system-ui", "sans-serif"],
+        sans: ["Cinzel", "system-ui", "sans-serif"],
       },
     },
   },

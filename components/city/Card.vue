@@ -17,7 +17,7 @@ const props = defineProps<{
       props.description ? 'col-span-2 !flex-row' : '',
       props.color ? `bg-${color}` : '',
     ]"
-    class="col-span-1 h-40 border p-4 rounded-xl hover:scale-105 scale-100 transition-all cursor-pointer flex flex-col items-center justify-center shadow-lg hover:bg-actions-foreground hover:text-background gap-4"
+    class="col-span-1 h-40 border-2 p-4 rounded-xl hover:scale-105 scale-100 transition-all cursor-pointer flex flex-col items-center justify-center shadow-lg hover:bg-actions-foreground hover:text-background gap-4"
   >
     <Icon :icon="`game-icons:${props.icon}`" class="w-20 h-20" />
     <p v-if="!props.description" class="text-xl font-semibold">

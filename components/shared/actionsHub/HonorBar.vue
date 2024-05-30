@@ -6,14 +6,16 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="h-4 w-40 bg-indigo-900 rounded-lg relative shadow-md">
+  <div
+    class="h-full w-12 bg-yellow-700 border-2 border-yellow-500 rounded-lg relative shadow-md"
+  >
     <div
-      :style="`width: ${((props.current * 100) / props.max).toFixed(0)}%`"
-      :class="`h-4 bg-indigo-700 rounded-lg flex items-center justify-center`"
+      :style="`height: ${((props.current * 100) / props.max).toFixed(0)}%`"
+      class="absolute bg-yellow-500 rounded-md w-full bottom-0"
     ></div>
-    <div class="absolute w-full top-0 flex items-center justify-center">
-      <p class="text-xs text-background dark:text-foreground">
-        {{ props.current }} / {{ props.max }}
+    <div class="h-full w-full flex items-center justify-center text-center">
+      <p class="text-xs text-background dark:text-foreground z-50">
+        {{ props.current }}
       </p>
     </div>
   </div>
