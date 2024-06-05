@@ -5,7 +5,7 @@ import { Icon } from "@iconify/vue";
 <template>
   <div class="bg-actions text-primary rounded-2xl border-2 shadow-lg">
     <div class="h-28 gap-4 flex items-center">
-      <SharedActionsHubHealthBar :current="100" :max="150" />
+      <SharedActionsHubHealthBar :current="130" :max="250" />
       <div class="h-full flex flex-col items-center justify-center">
         <div class="flex items-center justify-between gap-4">
           <div class="flex flex-col items-center">
@@ -25,7 +25,7 @@ import { Icon } from "@iconify/vue";
         <SharedActionsHubAttributesButton />
         <SharedActionsHubBackpackButton />
       </div>
-      <SharedActionsHubHonorBar :current="400" :max="550" />
+      <SharedActionsHubHonorBar :current="100" :max="550" />
     </div>
   </div>
 </template>
