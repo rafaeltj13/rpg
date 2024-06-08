@@ -50,7 +50,7 @@ export type ItemType =
 export type Location = {
   name: string;
   npcs: NPC[];
-  monsters?: Monster[];
+  monsters: Monster[];
   type: LocationType;
 };
 
@@ -67,11 +67,14 @@ export type Monster = {
   name: string;
   description: string;
   maxHp: number;
-  attributes: Attributes;
-  loot: {
+  damage: number;
+  exp: number;
+  attributes?: Attributes;
+  loot?: {
     item: Item;
     percentage: number;
   }[];
+  icon: string;
 };
 
 export type Quest = {

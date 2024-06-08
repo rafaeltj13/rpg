@@ -1,24 +1,97 @@
 <script setup lang="ts">
-import type { Location } from "@/types";
+import type { Location, Monster } from "@/types";
 
 const locations: Location[] = [
   {
     name: "Sole Fields",
     npcs: [],
-    monsters: [],
+    monsters: [
+      {
+        name: "Wolf",
+        maxHp: 15,
+        damage: 7,
+        exp: 15,
+        icon: "wolf-head",
+      },
+      {
+        name: "Goblin",
+        maxHp: 10,
+        damage: 5,
+        exp: 10,
+        icon: "goblin",
+      },
+    ] as Monster[],
     type: "forest",
   },
   {
     name: "Sole Dungeons",
     npcs: [],
-    monsters: [],
+    monsters: [
+      {
+        name: "Mite",
+        maxHp: 10,
+        damage: 5,
+        exp: 10,
+        icon: "mite",
+      },
+      {
+        name: "Bat",
+        maxHp: 20,
+        damage: 10,
+        exp: 20,
+        icon: "bat",
+      },
+    ] as Monster[],
     type: "dungeon",
   },
   {
-    name: "CGCITY",
+    name: "Sole Fields II",
     npcs: [],
-    monsters: [],
-    type: "city",
+    monsters: [
+      {
+        name: "Boar",
+        maxHp: 10,
+        damage: 5,
+        exp: 10,
+        icon: "boar",
+      },
+      {
+        name: "Wasp",
+        maxHp: 20,
+        damage: 10,
+        exp: 20,
+        icon: "wasp-sting",
+      },
+      {
+        name: "Goblin",
+        maxHp: 10,
+        damage: 5,
+        exp: 10,
+        icon: "goblin",
+      },
+      {
+        name: "Boar",
+        maxHp: 10,
+        damage: 5,
+        exp: 10,
+        icon: "boar",
+      },
+      {
+        name: "Wasp",
+        maxHp: 20,
+        damage: 10,
+        exp: 20,
+        icon: "wasp-sting",
+      },
+      {
+        name: "Goblin",
+        maxHp: 10,
+        damage: 5,
+        exp: 10,
+        icon: "goblin",
+      },
+    ] as Monster[],
+    type: "forest",
   },
 ];
 </script>
@@ -26,10 +99,9 @@ const locations: Location[] = [
 <template>
   <div class="mx-auto">
     <h1 class="text-[64px] text-primary font-bold pb-8">Explore</h1>
-    <h6 class="text-xl">Near sole:</h6>
-    <div class="pt-12 flex items-center gap-12">
+    <div class="pt-6 grid grid-cols-4 gap-8">
       <SharedLocationCard
-        v-for="loc of locations"
+        v-for="loc of [...locations, ...locations]"
         :key="loc.name"
         :location="loc"
       />
