@@ -1,5 +1,18 @@
 <script setup lang="ts">
-import type { Location, Monster } from "@/types";
+import type { Item, Location, Monster } from "@/types";
+
+const itens: Item[] = [
+  {
+    name: "Animal hide",
+    icon: "animal-hide",
+    type: "consumable",
+  },
+  {
+    name: "Bowie knife",
+    icon: "bowie-knife",
+    type: "consumable",
+  },
+];
 
 const locations: Location[] = [
   {
@@ -12,6 +25,12 @@ const locations: Location[] = [
         damage: 7,
         exp: 15,
         icon: "wolf-head",
+        loot: itens.map((item) => {
+          return {
+            item,
+            percentage: 99,
+          };
+        }),
       },
       {
         name: "Goblin",
@@ -19,6 +38,12 @@ const locations: Location[] = [
         damage: 5,
         exp: 10,
         icon: "goblin",
+        loot: itens.map((item) => {
+          return {
+            item,
+            percentage: 99,
+          };
+        }),
       },
     ] as Monster[],
     type: "forest",

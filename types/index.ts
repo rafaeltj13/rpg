@@ -36,7 +36,7 @@ export type Item = {
   name: string;
   icon: string;
   type: ItemType;
-  stats: { type: Attributes }[];
+  stats?: { type: Attributes }[];
 };
 
 export type ItemType =
