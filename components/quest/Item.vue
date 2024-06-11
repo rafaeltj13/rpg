@@ -32,7 +32,7 @@ const props = defineProps<{
   >
     <Drawer>
       <DrawerTrigger>
-        <div class="flex items-center justify-between gap-8">
+        <div class="flex items-start justify-between gap-8">
           <div class="flex flex-col items-start gap-4 text-left">
             <p class="text-xl font-semibold">{{ quest.title }}</p>
             <p class="text-md text-left">{{ quest.description }}</p>
