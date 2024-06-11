@@ -24,7 +24,7 @@ const icon = computed(() => {
   }
 });
 
-const loot: ComputedRef<Item[]> = computed(() => {
+const completeLoot: ComputedRef<Item[]> = computed(() => {
   return props.location.monsters
     .map((monster) => {
       return (monster.loot || []).map((loot) => {
@@ -55,11 +55,11 @@ const loot: ComputedRef<Item[]> = computed(() => {
               class="w-8 h-8"
             />
           </div>
-          <div v-if="loot.length">
+          <div v-if="completeLoot.length">
             <div class="w-[80%] h-[0.25px] bg-primary my-3 px-2"></div>
             <div class="gap-2 flex flex-wrap">
               <Icon
-                v-for="(item, index) of loot"
+                v-for="(item, index) of completeLoot"
                 :key="item.name + index"
                 :icon="`game-icons:${item.icon}`"
                 class="w-6 h-6"
@@ -70,17 +70,41 @@ const loot: ComputedRef<Item[]> = computed(() => {
       </div>
     </DrawerTrigger>
     <DrawerContent>
-      <DrawerHeader>
-        <DrawerTitle>aaa</DrawerTitle>
-        <DrawerDescription>bb</DrawerDescription>
-      </DrawerHeader>
-      <div
-        class="w-full pb-4 px-4 flex items-center justify-center md:justify-start gap-4"
-      >
-        <DrawerClose>
-          <Button variant="outline"> Reject </Button>
-        </DrawerClose>
-        <Button size="lg">Accept</Button>
+      <div class="mx-auto w-full max-w-sm py-4">
+        <DrawerHeader>
+          <DrawerTitle class="text-4xl mb-2">{{ location.name }}</DrawerTitle>
+          <DrawerDescription>
+            <div
+              v-for="(monster, index) of location.monsters"
+              :key="monster.name + index"
+            >
+              <div class="flex items-center gap-2">
+                <Icon :icon="`game-icons:${monster.icon}`" class="w-8 h-8" />
+                <p>{{ monster.name }} - HP: {{ monster.maxHp }}</p>
+              </div>
+              <div class="flex items-center gap-2 flex-wrap pt-1">
+                <Icon
+                  v-for="(loot, index) of monster.loot || []"
+                  :key="loot.item.icon + index"
+                  :icon="`game-icons:${loot.item.icon}`"
+                  class="w-6 h-6"
+                />
+              </div>
+              <div
+                v-if="index + 1 !== location.monsters.length"
+                class="w-[80%] h-[0.25px] bg-primary my-3"
+              ></div>
+            </div>
+          </DrawerDescription>
+        </DrawerHeader>
+        <div
+          class="w-full pb-4 px-4 flex items-center justify-center md:justify-start gap-4"
+        >
+          <DrawerClose>
+            <Button variant="outline"> Cancel </Button>
+          </DrawerClose>
+          <Button size="lg">Hunt</Button>
+        </div>
       </div>
     </DrawerContent>
   </Drawer>

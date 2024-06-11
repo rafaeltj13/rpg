@@ -56,17 +56,19 @@ const props = defineProps<{
         </div>
       </DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader>
-          <DrawerTitle>{{ quest.title }}</DrawerTitle>
-          <DrawerDescription>{{ quest.description }}</DrawerDescription>
-        </DrawerHeader>
-        <div
-          class="w-full pb-4 px-4 flex items-center justify-center md:justify-start gap-4"
-        >
-          <DrawerClose>
-            <Button variant="outline"> Reject </Button>
-          </DrawerClose>
-          <Button size="lg">Accept</Button>
+        <div class="mx-auto w-full max-w-sm">
+          <DrawerHeader>
+            <DrawerTitle>{{ quest.title }}</DrawerTitle>
+            <DrawerDescription>{{ quest.description }}</DrawerDescription>
+          </DrawerHeader>
+          <div
+            class="w-full pb-4 px-4 flex items-center justify-center md:justify-start gap-4"
+          >
+            <DrawerClose>
+              <Button variant="outline"> Reject </Button>
+            </DrawerClose>
+            <Button size="lg">Accept</Button>
+          </div>
         </div>
       </DrawerContent>
     </Drawer>

@@ -28,8 +28,9 @@ onUnmounted(() => {
       <SharedMenu />
       <p class="font-bold">miniRPG</p>
     </div>
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-2">
       <SharedDarkModeDropdown />
+      <SharedSettingsDropdown />
     </div>
   </div>
 </template>
