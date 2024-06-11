@@ -35,7 +35,7 @@ const loot: ComputedRef<Item[]> = computed(() => {
       <Icon :icon="`game-icons:${icon}`" class="w-8 h-8 cursor-pointer" />
       <p class="text-md font-bold">1 - 10</p>
     </div>
-    <p class="flex gap-4 text-xl font-bold">{{ props.location.name }}</p>
+    <p class="flex gap-4 text-2xl font-bold">{{ props.location.name }}</p>
     <div class="w-full pt-2">
       <div class="gap-4 flex flex-wrap">
         <Icon
