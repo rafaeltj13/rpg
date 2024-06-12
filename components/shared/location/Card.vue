@@ -73,30 +73,31 @@ const completeLoot: ComputedRef<Item[]> = computed(() => {
       <div class="mx-auto w-full max-w-sm py-4">
         <DrawerHeader>
           <DrawerTitle class="text-4xl mb-2">{{ location.name }}</DrawerTitle>
-          <DrawerDescription>
-            <div
-              v-for="(monster, index) of location.monsters"
-              :key="monster.name + index"
-            >
-              <div class="flex items-center gap-2">
-                <Icon :icon="`game-icons:${monster.icon}`" class="w-8 h-8" />
-                <p>{{ monster.name }} - HP: {{ monster.maxHp }}</p>
-              </div>
-              <div class="flex items-center gap-2 flex-wrap pt-1">
-                <Icon
-                  v-for="(loot, index) of monster.loot || []"
-                  :key="loot.item.icon + index"
-                  :icon="`game-icons:${loot.item.icon}`"
-                  class="w-6 h-6"
-                />
-              </div>
-              <div
-                v-if="index + 1 !== location.monsters.length"
-                class="w-[80%] h-[0.25px] bg-primary my-3"
-              ></div>
-            </div>
-          </DrawerDescription>
         </DrawerHeader>
+        <DrawerDescription>
+          <div
+            v-for="(monster, index) of location.monsters"
+            :key="monster.name + index"
+          >
+            <div class="flex items-center gap-2">
+              <Icon :icon="`game-icons:${monster.icon}`" class="w-8 h-8" />
+              <p>{{ monster.name }} - HP: {{ monster.maxHp }}</p>
+            </div>
+            <div class="flex items-center gap-2 flex-wrap pt-1">
+              <Icon
+                v-for="(loot, index) of monster.loot || []"
+                :key="loot.item.icon + index"
+                :icon="`game-icons:${loot.item.icon}`"
+                class="w-6 h-6"
+              />
+            </div>
+            <div
+              v-if="index + 1 !== location.monsters.length"
+              class="w-[80%] h-[0.25px] bg-primary my-3"
+            ></div>
+          </div>
+          <div class="py-6">Hour(s)</div>
+        </DrawerDescription>
         <div
           class="w-full pb-4 px-4 flex items-center justify-center md:justify-start gap-4"
         >

@@ -24,13 +24,15 @@ onUnmounted(() => {
         !isScrollAtTop,
     }"
   >
-    <div class="flex items-center gap-2">
-      <SharedMenu />
-      <p class="font-bold">miniRPG</p>
-    </div>
-    <div class="flex items-center gap-2">
-      <SharedDarkModeDropdown />
-      <SharedSettingsDropdown />
-    </div>
+    <ClientOnly>
+      <div class="flex items-center gap-2">
+        <SharedMenu />
+        <p class="font-bold">miniRPG</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <SharedDarkModeDropdown />
+        <SharedSettingsDropdown />
+      </div>
+    </ClientOnly>
   </div>
 </template>
