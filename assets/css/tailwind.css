@@ -7,8 +7,8 @@
     --background: #dedede;
     --foreground: #292524;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: #292524;
+    --muted-foreground: #292524;
 
     --popover: #dedede;
     --popover-foreground: #292524;
@@ -43,8 +43,8 @@
     --background: #151515;
     --foreground: #eeeeee;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: #eeeeee;
+    --muted-foreground: #eeeeee;
 
     --popover: #151515;
     --popover-foreground: #eeeeee;

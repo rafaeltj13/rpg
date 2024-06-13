@@ -13,7 +13,9 @@ import { Icon } from "@iconify/vue";
 
 const props = defineProps<{ location: Location }>();
 
-const icon = computed(() => {
+const time = ref<number>(1);
+
+const typeIcon = computed(() => {
   switch (props.location.type) {
     case "forest":
       return "forest-entrance";
@@ -42,7 +44,10 @@ const completeLoot: ComputedRef<Item[]> = computed(() => {
         class="h-full col-span-1 border-2 p-4 rounded-xl hover:scale-105 scale-100 transition-all cursor-pointer flex flex-col items-start justify-start shadow-lg hover:bg-actions-foreground hover:text-background gap-3"
       >
         <div class="flex items-center justify-between w-full">
-          <Icon :icon="`game-icons:${icon}`" class="w-8 h-8 cursor-pointer" />
+          <Icon
+            :icon="`game-icons:${typeIcon}`"
+            class="w-8 h-8 cursor-pointer"
+          />
           <p class="text-md font-bold">1 - 10</p>
         </div>
         <p class="flex gap-4 text-xl font-bold">{{ props.location.name }}</p>
@@ -62,7 +67,7 @@ const completeLoot: ComputedRef<Item[]> = computed(() => {
                 v-for="(item, index) of completeLoot"
                 :key="item.name + index"
                 :icon="`game-icons:${item.icon}`"
-                class="w-6 h-6"
+                class="w-5 h-5"
               />
             </div>
           </div>
@@ -71,8 +76,13 @@ const completeLoot: ComputedRef<Item[]> = computed(() => {
     </DrawerTrigger>
     <DrawerContent>
       <div class="mx-auto w-full max-w-sm py-4">
-        <DrawerHeader>
-          <DrawerTitle class="text-4xl mb-2">{{ location.name }}</DrawerTitle>
+        <DrawerHeader class="px-0">
+          <DrawerTitle class="text-4xl mb-2 flex gap-2 px-0"
+            ><Icon
+              :icon="`game-icons:${typeIcon}`"
+              class="w-8 h-8 cursor-pointer"
+            />{{ location.name }}</DrawerTitle
+          >
         </DrawerHeader>
         <DrawerDescription>
           <div
@@ -80,30 +90,38 @@ const completeLoot: ComputedRef<Item[]> = computed(() => {
             :key="monster.name + index"
           >
             <div class="flex items-center gap-2">
-              <Icon :icon="`game-icons:${monster.icon}`" class="w-8 h-8" />
-              <p>{{ monster.name }} - HP: {{ monster.maxHp }}</p>
-            </div>
-            <div class="flex items-center gap-2 flex-wrap pt-1">
               <Icon
-                v-for="(loot, index) of monster.loot || []"
-                :key="loot.item.icon + index"
-                :icon="`game-icons:${loot.item.icon}`"
-                class="w-6 h-6"
+                :icon="`game-icons:${monster.icon}`"
+                class="w-10 h-10 pb-1"
               />
+              <p class="text-lg">
+                {{ monster.name }} - HP: {{ monster.maxHp }}
+              </p>
+            </div>
+            <div
+              v-for="(loot, index) of monster.loot || []"
+              :key="loot.item.icon + index"
+              class="flex items-center gap-2 flex-wrap py-1"
+            >
+              <Icon :icon="`game-icons:${loot.item.icon}`" class="w-5 h-5" />
+              <p class="text-xs">
+                {{ loot.item.name }} - {{ loot.percentage }}%
+              </p>
             </div>
             <div
               v-if="index + 1 !== location.monsters.length"
               class="w-[80%] h-[0.25px] bg-primary my-3"
             ></div>
           </div>
-          <div class="py-6">Hour(s)</div>
+          <div class="pt-6">Hour(s)</div>
+          <SharedTimeInput v-model="time" />
         </DrawerDescription>
         <div
-          class="w-full pb-4 px-4 flex items-center justify-center md:justify-start gap-4"
+          class="w-full pb-4 flex items-center justify-center md:justify-start gap-4"
         >
-          <DrawerClose>
+          <DrawerClos>
             <Button variant="outline"> Cancel </Button>
-          </DrawerClose>
+          </DrawerClos>
           <Button size="lg">Hunt</Button>
         </div>
       </div>

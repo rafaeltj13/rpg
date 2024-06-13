@@ -13,7 +13,7 @@ import { Icon } from "@iconify/vue";
             <p>200</p>
           </div>
           <div class="flex flex-col items-center">
-            <Icon icon="game-icons:round-potion" class="h-8 w-8" />
+            <Icon icon="game-icons:rupee" class="h-8 w-8" />
             <p>3</p>
           </div>
         </div>
@@ -25,7 +25,7 @@ import { Icon } from "@iconify/vue";
         <SharedActionsHubAttributesButton />
         <SharedActionsHubBackpackButton />
       </div>
-      <SharedActionsHubHonorBar :current="100" :max="550" />
+      <SharedActionsHubHonorBar :current="120" :max="550" />
     </div>
   </div>
 </template>
