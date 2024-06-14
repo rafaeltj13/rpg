@@ -11,6 +11,7 @@ import {
 import type { Item, Location } from "@/types";
 import { Icon } from "@iconify/vue";
 
+const router = useRouter();
 const props = defineProps<{ location: Location }>();
 
 const time = ref<number>(1);
@@ -35,6 +36,10 @@ const completeLoot: ComputedRef<Item[]> = computed(() => {
     })
     .flat() as Item[];
 });
+
+const hunt = () => {
+  router.push({ name: "busy" });
+};
 </script>
 
 <template>
@@ -119,10 +124,10 @@ const completeLoot: ComputedRef<Item[]> = computed(() => {
         <div
           class="w-full pb-4 flex items-center justify-center md:justify-start gap-4"
         >
-          <DrawerClos>
+          <DrawerClose>
             <Button variant="outline"> Cancel </Button>
-          </DrawerClos>
-          <Button size="lg">Hunt</Button>
+          </DrawerClose>
+          <Button size="lg" @click="hunt">Hunt</Button>
         </div>
       </div>
     </DrawerContent>

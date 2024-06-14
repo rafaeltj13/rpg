@@ -4,8 +4,6 @@ const cityName = "Sole";
 useHead({
   title: `${cityName} - miniRPG`,
 });
-
-const npcs = [];
 </script>
 
 <template>
