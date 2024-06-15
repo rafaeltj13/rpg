@@ -1,53 +1,8 @@
 <script setup lang="ts">
-import type { Item, Location, Monster } from "@/types";
 import { Icon } from "@iconify/vue";
+import { soleFields } from "~/mock";
 
-const itens: Item[] = [
-  {
-    name: "Animal hide",
-    icon: "animal-hide",
-    type: "consumable",
-  },
-  {
-    name: "Bowie knife",
-    icon: "bowie-knife",
-    type: "consumable",
-  },
-];
-
-const location: Location = {
-  name: "Sole Fields",
-  npcs: [],
-  monsters: [
-    {
-      name: "Wolf",
-      maxHp: 15,
-      damage: 7,
-      exp: 15,
-      icon: "wolf-head",
-      loot: itens.map((item) => {
-        return {
-          item,
-          percentage: 99,
-        };
-      }),
-    },
-    {
-      name: "Goblin",
-      maxHp: 10,
-      damage: 5,
-      exp: 10,
-      icon: "goblin",
-      loot: itens.map((item) => {
-        return {
-          item,
-          percentage: 99,
-        };
-      }),
-    },
-  ] as Monster[],
-  type: "forest",
-};
+const location = soleFields;
 
 const typeIcon = computed(() => {
   switch (location.type) {
