@@ -7,15 +7,15 @@ const props = defineProps<{
 
 <template>
   <div
-    class="mt-2 h-5 w-full bg-indigo-700 border-2 border-indigo-500 rounded-md relative shadow-md"
+    class="h-full w-10 bg-yellow-900 border-2 border-yellow-600 rounded-lg relative shadow-md"
   >
     <div
-      :style="`width: ${((props.current * 100) / props.max).toFixed(0)}%`"
-      class="absolute bg-indigo-500 rounded-sm h-4 bottom-0"
+      :style="`height: ${((props.current * 100) / props.max).toFixed(0)}%`"
+      class="absolute bg-yellow-700 rounded-md w-full bottom-0"
     ></div>
     <div class="h-full w-full flex items-center justify-center text-center">
       <p class="text-xs text-background dark:text-foreground z-50">
-        {{ props.current }} / {{ props.max }}
+        {{ props.current }}
       </p>
     </div>
   </div>

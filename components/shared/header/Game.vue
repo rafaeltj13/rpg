@@ -30,6 +30,18 @@ onUnmounted(() => {
         <p class="font-bold">miniRPG</p>
       </div>
       <div class="flex items-center gap-2">
+        <div class="h-full flex flex-col items-center justify-center">
+          <div class="flex items-center justify-between gap-4 mr-4">
+            <div class="flex flex-col items-center">
+              <Icon icon="game-icons:two-coins" class="h-5 w-5" />
+              <p class="text-sm">200</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <Icon icon="game-icons:rupee" class="h-5 w-5" />
+              <p class="text-sm">3</p>
+            </div>
+          </div>
+        </div>
         <SharedDarkModeDropdown />
         <SharedSettingsDropdown />
       </div>
