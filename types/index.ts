@@ -10,6 +10,7 @@ export type Player = {
   inventory: Inventory;
   class: Class;
   attributes: Attributes;
+  skills: Skill[];
 };
 
 export type Class = {
@@ -66,15 +67,14 @@ export type NPC = {
 export type Monster = {
   name: string;
   description: string;
-  maxHp: number;
-  damage: number;
-  exp: number;
+  honor: number;
   attributes?: Attributes;
   loot?: {
     item: Item;
     percentage: number;
   }[];
   icon: string;
+  skills?: Skill[];
 };
 
 export type Quest = {
@@ -90,4 +90,11 @@ export type Quest = {
     target: Monster | Item;
     goal: number;
   };
+};
+
+export type Skill = {
+  name: string;
+  description: string;
+  type: "active" | "passive";
+  calculateDamage: (attribute: number) => number;
 };
