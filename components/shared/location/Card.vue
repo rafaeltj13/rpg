@@ -68,11 +68,11 @@ const hunt = () => {
           <div v-if="completeLoot.length">
             <div class="w-[80%] h-[0.25px] bg-primary my-3 px-2"></div>
             <div class="gap-2 flex flex-wrap">
-              <Icon
+              <SharedItem
                 v-for="(item, index) of completeLoot"
                 :key="item.name + index"
-                :icon="`game-icons:${item.icon}`"
-                class="w-5 h-5"
+                :icon="item.icon"
+                iconStyle="w-5 h-5"
               />
             </div>
           </div>
@@ -95,10 +95,7 @@ const hunt = () => {
             :key="monster.name + index"
           >
             <div class="flex items-center gap-2">
-              <Icon
-                :icon="`game-icons:${monster.icon}`"
-                class="w-10 h-10 pb-1"
-              />
+              <SharedItem :icon="monster.icon" iconStyle="w-10 h-10 pb-1" />
               <p class="text-lg">
                 {{ monster.name }} - HP: {{ monster.attributes?.vitality }}
               </p>
@@ -108,7 +105,7 @@ const hunt = () => {
               :key="loot.item.icon + index"
               class="flex items-center gap-2 flex-wrap py-1"
             >
-              <Icon :icon="`game-icons:${loot.item.icon}`" class="w-5 h-5" />
+              <SharedItem :icon="loot.item.icon" iconStyle="w-5 h-5" />
               <p class="text-xs">
                 {{ loot.item.name }} - {{ loot.percentage }}%
               </p>

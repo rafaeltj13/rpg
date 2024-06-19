@@ -9,7 +9,7 @@ export const hide: Item = {
 export const bowieKnife: Item = {
   name: "Bowie knife",
   icon: "bowie-knife",
-  type: "consumable",
+  type: "weapon",
 };
 
 export const goblinHand: Item = {
