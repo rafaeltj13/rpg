@@ -3,7 +3,6 @@ export type Player = {
   age: number;
   country: string;
   currentHp: number;
-  maxHp: number;
   honor: number;
   quests: Quest[];
   currentLocation: Location;

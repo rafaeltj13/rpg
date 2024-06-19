@@ -14,5 +14,5 @@ import { Icon } from "@iconify/vue";
     </div>
     <SharedActionsHubStaminaBar :current="20" :max="110" />
   </div>
-  <SharedActionsHubHonorBar :current="120" :max="550" />
+  <SharedActionsHubHonorBar :current="260" :max="550" />
 </template>

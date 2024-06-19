@@ -71,7 +71,7 @@ const myQuests = computed(() =>
 
 <template>
   <div>
-    <h1 class="text-[64px] text-primary font-bold pb-8">Quest Board</h1>
+    <h1 class="text-[64px] text-primary font-bold pb-8">My Quests</h1>
     <h3 class="text-2xl font-semibold pb-4">Available quests</h3>
     <div class="grid grid-cols-8 grid-flow-row gap-8 pb-16">
       <QuestItem

@@ -100,7 +100,7 @@ const hunt = () => {
                 class="w-10 h-10 pb-1"
               />
               <p class="text-lg">
-                {{ monster.name }} - HP: {{ monster.maxHp }}
+                {{ monster.name }} - HP: {{ monster.attributes?.vitality }}
               </p>
             </div>
             <div
@@ -118,7 +118,6 @@ const hunt = () => {
               class="w-[80%] h-[0.25px] bg-primary my-3"
             ></div>
           </div>
-          <div class="pt-6">Hour(s)</div>
           <SharedTimeInput v-model="time" />
         </DrawerDescription>
         <div

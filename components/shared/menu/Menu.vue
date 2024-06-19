@@ -26,7 +26,7 @@ import { Icon } from "@iconify/vue";
               icon="game-icons:stabbed-note"
               class="h-[1.5rem] w-[1.5rem] mr-2"
             />
-            <p class="text-md">Quests</p>
+            <p class="text-md">My Quests</p>
           </DropdownMenuItem>
         </NuxtLink>
         <NuxtLink class="cursor-pointer" to="/map">
