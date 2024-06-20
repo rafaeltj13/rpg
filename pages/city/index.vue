@@ -8,7 +8,7 @@ useHead({
 
 <template>
   <div>
-    <h1 class="text-[64px] text-primary font-bold pb-8">{{ cityName }}</h1>
+    <SharedPageTitle :title="cityName" />
     <div class="grid grid-cols-6 grid-flow-row gap-6">
       <CityExplore />
       <CityQuests />

@@ -16,8 +16,11 @@ import { Icon } from "@iconify/vue";
       <DropdownMenuContent align="start">
         <NuxtLink class="cursor-pointer" to="/city">
           <DropdownMenuItem>
-            <Icon icon="game-icons:house" class="h-[1.5rem] w-[1.5rem] mr-2" />
-            <p class="text-md">Resume</p>
+            <Icon
+              icon="game-icons:hill-fort"
+              class="h-[1.5rem] w-[1.5rem] mr-2"
+            />
+            <p class="text-md">City</p>
           </DropdownMenuItem>
         </NuxtLink>
         <NuxtLink class="cursor-pointer" to="/quests">

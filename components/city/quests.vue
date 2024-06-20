@@ -4,7 +4,7 @@ const availableQuests = 40;
 
 <template>
   <CityCard
-    to="/quests"
+    to="/city/quests"
     icon="stabbed-note"
     text="Quest Board"
     color="primary"

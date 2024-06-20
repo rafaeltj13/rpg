@@ -18,7 +18,7 @@ const typeIcon = computed(() => {
 
 <template>
   <div>
-    <h1 class="text-[64px] text-primary font-bold pb-8">Hunting</h1>
+    <SharedPageTitle title="Hunting" />
     <h4 class="flex items-center gap-4 text-4xl font-bold">
       <Icon
         :icon="`game-icons:${typeIcon}`"
@@ -36,7 +36,7 @@ const typeIcon = computed(() => {
       </div>
     </div>
     <div class="flex items-center gap-4">
-      <p class="text-2xl font-bold">Time remaining: 52 minute(s)</p>
+      <p class="text-2xl font-bold">Time remaining:10 minute(s)</p>
       <div class="flex gap-2">
         <div
           class="h-4 w-4 bg-primary rounded-full animate-bounce [animation-delay:-0.3s]"

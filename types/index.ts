@@ -77,18 +77,17 @@ export type Monster = {
 };
 
 export type Quest = {
-  name: string;
+  title: string;
   description: string;
   type: "hunt" | "gather";
-  reward: {
-    honor?: number;
-    gold?: number;
-    item?: Item;
-  };
-  requirements: {
+  honor?: number;
+  gold?: number;
+  itens?: Item[];
+  requirements?: {
     target: Monster | Item;
     goal: number;
   };
+  state: "available" | "inProgress" | "done";
 };
 
 export type Skill = {

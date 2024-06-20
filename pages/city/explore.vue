@@ -6,7 +6,7 @@ const locations = [soleFields, soleFieldsII, soleDungeon];
 
 <template>
   <div class="mx-auto">
-    <h1 class="text-[64px] text-primary font-bold pb-8">Explore</h1>
+    <SharedPageTitle title="Explore" />
     <div class="pt-6 grid grid-cols-4 gap-8">
       <SharedLocationCard
         v-for="loc of locations"

@@ -18,7 +18,7 @@ const handleCollect = () => {
 
 <template>
   <div>
-    <h1 class="text-[64px] text-primary font-bold pb-8">Hunting is done</h1>
+    <SharedPageTitle title="Hunting is done" />
     <h4 class="text-2xl mb-8">Rewards:</h4>
     <div class="flex items-center gap-4">
       <div class="flex flex-col items-center justify-center">

@@ -9,15 +9,10 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Icon } from "@iconify/vue";
+import type { Quest } from "~/types";
 
 const props = defineProps<{
-  quest: {
-    title: string;
-    description: string;
-    honor: number;
-    gold: number;
-    state: "available" | "inProgress" | "done";
-  };
+  quest: Quest;
 }>();
 </script>
 
