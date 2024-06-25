@@ -1,30 +1,39 @@
 export type Player = {
+  id?: number;
+  created_at?: number;
   name: string;
   age: number;
   country: string;
-  currentHp: number;
   honor: number;
-  quests: Quest[];
+  quests?: Quest[];
+  completedQuests?: Quest[];
   currentLocation: Location;
-  inventory: Inventory;
-  class: Class;
+  inventory?: Inventory;
+  class?: Class;
   attributes: Attributes;
-  skills: Skill[];
 };
 
 export type Class = {
+  id?: number;
+  created_at?: number;
   name: string;
   icon: string;
 };
 
 export type Attributes = {
+  id?: number;
+  created_at?: number;
+  player?: number;
   strength: number;
-  dexterity: number;
+  agility: number;
   intelligence: number;
   vitality: number;
 };
 
 export type Inventory = {
+  id?: number;
+  created_at?: number;
+  player: number;
   heml: Item;
   chest: Item;
   boots: Item;
@@ -33,9 +42,12 @@ export type Inventory = {
 };
 
 export type Item = {
+  id?: number;
+  created_at?: number;
   name: string;
   icon: string;
   type: ItemType;
+  skill: Skill;
   stats?: { type: Attributes }[];
 };
 
@@ -48,6 +60,8 @@ export type ItemType =
   | "collectable";
 
 export type Location = {
+  id?: number;
+  created_at?: number;
   name: string;
   npcs: NPC[];
   monsters: Monster[];
@@ -57,6 +71,8 @@ export type Location = {
 export type LocationType = "city" | "dungeon" | "forest";
 
 export type NPC = {
+  id?: number;
+  created_at?: number;
   name: string;
   type: "vendor" | "character";
   quests?: Quest[];
@@ -64,11 +80,13 @@ export type NPC = {
 };
 
 export type Monster = {
+  id?: number;
+  created_at?: number;
   name: string;
   description: string;
   honor: number;
   attributes?: Attributes;
-  loot?: {
+  loots?: {
     item: Item;
     percentage: number;
   }[];
@@ -77,20 +95,25 @@ export type Monster = {
 };
 
 export type Quest = {
+  id?: number;
+  created_at?: number;
   title: string;
   description: string;
-  type: "hunt" | "gather";
+  type: "hunt" | "gather" | "class";
   honor?: number;
   gold?: number;
   itens?: Item[];
-  requirements?: {
-    target: Monster | Item;
-    goal: number;
-  };
-  state: "available" | "inProgress" | "done";
+  requirements?: [
+    {
+      target: Monster | Item;
+      goal: number;
+    }
+  ];
 };
 
 export type Skill = {
+  id?: number;
+  created_at?: number;
   name: string;
   description: string;
   type: "active" | "passive";

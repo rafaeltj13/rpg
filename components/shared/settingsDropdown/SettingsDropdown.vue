@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
+import { useSupabase } from "~/composables/api/useSupabase";
+
+const handleLogout = async () => {
+  await useSupabase().auth.signOut();
+
+  navigateTo("/login");
+  // Empty user data in state
+};
 </script>
 
 <template>
@@ -14,7 +22,7 @@ import { Icon } from "@iconify/vue";
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem @click="() => {}"> Logout </DropdownMenuItem>
+        <DropdownMenuItem @click="handleLogout"> Logout </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   </div>

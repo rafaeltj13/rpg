@@ -9,7 +9,7 @@ import { Icon } from "@iconify/vue";
     <div
       class="max-w-[1366px] h-full mx-auto px-8 flex items-center justify-between"
     >
-      <p class="text-3xl">RPG</p>
+      <p class="text-3xl">miniRPG</p>
       <div class="flex items-center gap-4">
         <NuxtLink href="https://github.com/rafaeltj13">
           <Icon

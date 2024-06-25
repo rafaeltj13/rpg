@@ -30,7 +30,7 @@ const typeIcon = computed(() => {
 const completeLoot: ComputedRef<Item[]> = computed(() => {
   return props.location.monsters
     .map((monster) => {
-      return (monster.loot || []).map((loot) => {
+      return (monster.loots || []).map((loot) => {
         return loot.item;
       });
     })
@@ -53,7 +53,6 @@ const hunt = () => {
             :icon="`game-icons:${typeIcon}`"
             class="w-8 h-8 cursor-pointer"
           />
-          <p class="text-md font-bold">1 - 10</p>
         </div>
         <p class="flex gap-4 text-xl font-bold">{{ props.location.name }}</p>
         <div class="w-full pt-2">
@@ -101,7 +100,7 @@ const hunt = () => {
               </p>
             </div>
             <div
-              v-for="(loot, index) of monster.loot || []"
+              v-for="(loot, index) of monster.loots || []"
               :key="loot.item.icon + index"
               class="flex items-center gap-2 flex-wrap py-1"
             >

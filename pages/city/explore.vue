@@ -1,7 +1,18 @@
 <script setup lang="ts">
-import { soleFields, soleFieldsII, soleDungeon } from "~/mock";
+import type { Location } from "~/types";
+import { useLocations } from "~/composables/api/useLocations";
 
-const locations = [soleFields, soleFieldsII, soleDungeon];
+const locations = ref<Location[]>([]);
+const { getNearLocations } = useLocations();
+
+async function getLocations() {
+  const data = await getNearLocations();
+  locations.value = data;
+}
+
+onMounted(() => {
+  getLocations();
+});
 </script>
 
 <template>
@@ -9,7 +20,7 @@ const locations = [soleFields, soleFieldsII, soleDungeon];
     <SharedPageTitle title="Explore" />
     <div class="pt-6 grid grid-cols-4 gap-8">
       <SharedLocationCard
-        v-for="loc of locations"
+        v-for="loc of locations.filter((loc) => loc.type !== 'city')"
         :key="loc.name"
         :location="loc"
       />

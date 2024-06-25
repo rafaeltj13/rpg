@@ -1,4 +1,6 @@
 <template>
   <slot />
-  <SharedDarkModeDropdown class="fixed bottom-6 left-6 z-50" />
+  <ClientOnly>
+    <SharedDarkModeDropdown class="fixed bottom-6 left-6 z-50" />
+  </ClientOnly>
 </template>

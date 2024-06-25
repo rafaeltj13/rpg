@@ -7,7 +7,6 @@ export const quests: Quest[] = [
       "The dragon is terrorizing the village. Kill it and save the village.",
     honor: 100,
     gold: 100,
-    state: "available",
     type: "hunt",
   },
   {
@@ -16,7 +15,6 @@ export const quests: Quest[] = [
       "The dragon is terrorizing the village. Kill it and save the village.",
     honor: 100,
     gold: 100,
-    state: "available",
     type: "hunt",
   },
   {
@@ -25,7 +23,6 @@ export const quests: Quest[] = [
       "The dragon is terrorizing the village. Kill it and save the village.",
     honor: 100,
     gold: 100,
-    state: "available",
     type: "hunt",
   },
   {
@@ -34,7 +31,6 @@ export const quests: Quest[] = [
       "The dragon is terrorizing the village. Kill it and save the village.",
     honor: 100,
     gold: 100,
-    state: "available",
     type: "hunt",
   },
   {
@@ -43,7 +39,6 @@ export const quests: Quest[] = [
       "The globin is breaking the village. Kill it and save the village.",
     honor: 150,
     gold: 150,
-    state: "inProgress",
     type: "hunt",
   },
   {
@@ -52,7 +47,6 @@ export const quests: Quest[] = [
       "The wolf is eating the village. Kill it and save the village.",
     honor: 150,
     gold: 150,
-    state: "done",
     type: "hunt",
   },
   {
@@ -61,7 +55,6 @@ export const quests: Quest[] = [
       "The wolf is eating the village. Kill it and save the village.",
     honor: 150,
     gold: 150,
-    state: "done",
     type: "hunt",
   },
 ];

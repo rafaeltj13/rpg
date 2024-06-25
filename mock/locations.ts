@@ -1,5 +1,12 @@
 import { bat, boar, goblin, mite, wasp, wolf } from "./monsters";
-import type { Location, Monster } from "@/types";
+import type { Location } from "@/types";
+
+export const sole: Location = {
+  name: "Sole",
+  npcs: [],
+  monsters: [],
+  type: "city",
+};
 
 export const soleFields: Location = {
   name: "Sole Fields",

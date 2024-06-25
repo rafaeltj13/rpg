@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "shadcn-nuxt",
     "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",
+    "@pinia/nuxt",
   ],
   shadcn: {
     /**

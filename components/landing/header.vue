@@ -22,7 +22,7 @@ onUnmounted(() => {
         !isScrollAtTop,
     }"
   >
-    <div><h1 class="text-2xl">RPG</h1></div>
+    <div><h1 class="text-2xl">miniRPG</h1></div>
     <div class="gap-2 items-center hidden sm:flex">
       <Button :variant="isScrollAtTop ? 'ghost' : 'link'" size="lg"
         >Classes</Button

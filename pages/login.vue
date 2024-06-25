@@ -31,7 +31,14 @@
             <Input id="password" type="password" required />
           </div>
           <Button type="submit" class="w-full"> Login </Button>
-          <Button variant="outline" class="w-full"> Login with Google </Button>
+          OR
+          <Button
+            variant="outline"
+            class="w-full"
+            @click="handleLoginWithGoogle"
+          >
+            Continue with Google
+          </Button>
         </div>
         <div class="mt-4 text-center text-sm">
           Don't have an account?
@@ -43,7 +50,21 @@
 </template>
 
 <script setup lang="ts">
+import { useSupabase } from "~/composables/api/useSupabase";
+
 definePageMeta({
   layout: "login",
 });
+
+const handleLoginWithGoogle = async () => {
+  await useSupabase().auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: "http://localhost:3000/city",
+    },
+  });
+
+  //TODO this have to be changed to the correct place, when the state of the user is changed in supabase
+  navigateTo("/city");
+};
 </script>
