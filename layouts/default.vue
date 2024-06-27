@@ -4,7 +4,8 @@ import { useSupabase } from "~/composables/api/useSupabase";
 const { setSession } = useSessionStore();
 
 useSupabase().auth.onAuthStateChange(async (_, session) => {
-  console.log({ session });
+  if (!session) return;
+
   setSession({
     token: session?.access_token || null,
     sessionId: session?.user.id || null,

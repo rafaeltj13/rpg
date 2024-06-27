@@ -24,12 +24,18 @@ const PLAYER_DEFAULT_STORE: Player = {
   },
 };
 
-export const usePlayerStore = defineStore("playerStore", {
-  state: () => PLAYER_DEFAULT_STORE,
-  actions: {
-    async fetch() {
-      const infos = await $fetch("https://api.nuxt.com/modules/pinia");
-      console.log(infos);
-    },
-  },
+export const useSessionStore = defineStore("session", () => {
+  const playerStateRef = ref<Player | null>(PLAYER_DEFAULT_STORE);
+
+  const playerState = computed(() => playerStateRef.value);
+
+  function setPlayerState({ player }: { player: Player | null }) {
+    playerStateRef.value = player;
+
+    console.log({
+      playerState: playerStateRef.value,
+    });
+  }
+
+  return { playerState, setPlayerState };
 });

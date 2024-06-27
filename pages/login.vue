@@ -30,8 +30,12 @@
             </div>
             <Input id="password" type="password" required />
           </div>
-          <Button type="submit" class="w-full"> Login </Button>
-          OR
+          <Button type="submit" class="w-full py-2"> Login </Button>
+          <div class="flex items-center">
+            <div class="w-[100%] h-[0.25px] bg-secondary"></div>
+            <p class="text-center px-6">or</p>
+            <div class="w-[100%] h-[0.25px] bg-secondary"></div>
+          </div>
           <Button
             variant="outline"
             class="w-full"

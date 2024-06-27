@@ -13,9 +13,13 @@ const SESSION_DEFAULT_STORE: SessionStore = {
 };
 
 export const useSessionStore = defineStore("session", () => {
-  const accessToken = ref(SESSION_DEFAULT_STORE.accessToken);
-  const authId = ref(SESSION_DEFAULT_STORE.authId);
-  const email = ref(SESSION_DEFAULT_STORE.email);
+  const accessTokenRef = ref(SESSION_DEFAULT_STORE.accessToken);
+  const authIdRef = ref(SESSION_DEFAULT_STORE.authId);
+  const emailRef = ref(SESSION_DEFAULT_STORE.email);
+
+  const token = computed(() => accessTokenRef.value);
+  const authId = computed(() => authIdRef.value);
+  const email = computed(() => emailRef.value);
 
   function setSession({
     token,
@@ -26,10 +30,16 @@ export const useSessionStore = defineStore("session", () => {
     sessionId: string | null;
     sessionEmail: string | null;
   }) {
-    accessToken.value = token;
-    authId.value = sessionId;
-    email.value = sessionEmail;
+    accessTokenRef.value = token;
+    authIdRef.value = sessionId;
+    emailRef.value = sessionEmail;
+
+    console.log({
+      accessToken: accessTokenRef.value,
+      authId: authIdRef.value,
+      email: emailRef.value,
+    });
   }
 
-  return { accessToken, email, setSession };
+  return { token, authId, email, setSession };
 });
