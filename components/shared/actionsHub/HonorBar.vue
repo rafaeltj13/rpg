@@ -9,11 +9,11 @@ const props = defineProps<{
 
 <template>
   <div
-    class="mt-2 h-5 w-full bg-indigo-700 border-2 border-indigo-500 rounded-md relative shadow-md"
+    class="mt-2 h-5 w-full bg-indigo-700 border-2 border-indigo-500 rounded-sm relative shadow-md"
   >
     <div
       :style="`width: ${((props.current * 100) / props.max).toFixed(0)}%`"
-      class="absolute bg-indigo-500 rounded-sm h-4 bottom-0"
+      class="absolute bg-indigo-500 rounded-xs h-4 bottom-0"
     ></div>
     <div class="h-full w-full flex items-center justify-center text-center">
       <p

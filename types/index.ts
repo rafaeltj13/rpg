@@ -1,6 +1,6 @@
 export type Player = {
   id?: number;
-  created_at?: number;
+  created_at?: Date;
   name: string;
   age: number;
   country: string;

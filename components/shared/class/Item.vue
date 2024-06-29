@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/vue";
 
 const props = defineProps<{
-  icon: string;
+  icon?: string;
   type: "sm" | "lg";
 }>();
 

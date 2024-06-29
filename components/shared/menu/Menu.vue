@@ -6,10 +6,10 @@ import { Icon } from "@iconify/vue";
   <div class="text-foreground">
     <DropdownMenu>
       <DropdownMenuTrigger as-child>
-        <Button variant="ghost" class="h-12">
+        <Button size="sm" variant="ghost" class="p-2">
           <Icon
             icon="ic:baseline-format-list-bulleted"
-            class="h-[1.5rem] w-[1.5rem]"
+            class="h-[1.25rem] w-[1.25rem]"
           />
         </Button>
       </DropdownMenuTrigger>
@@ -44,7 +44,7 @@ import { Icon } from "@iconify/vue";
         <NuxtLink class="cursor-pointer" to="/attributes">
           <DropdownMenuItem>
             <Icon icon="game-icons:skills" class="h-[1.5rem] w-[1.5rem] mr-2" />
-            <p class="text-md">Attributes</p>
+            <p class="text-md">Character</p>
           </DropdownMenuItem>
         </NuxtLink>
         <NuxtLink class="cursor-pointer" to="/backpack">

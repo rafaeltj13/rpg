@@ -16,7 +16,7 @@ import { Icon } from "@iconify/vue";
         <Icon icon="game-icons:skills" class="w-6 h-6" /></div
     ></HoverCardTrigger>
     <HoverCardContent>
-      <div class="w-full text-xl">Attributes</div>
+      <div class="w-full text-xl">Character</div>
     </HoverCardContent>
   </HoverCard>
 </template>
