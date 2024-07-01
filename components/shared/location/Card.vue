@@ -46,7 +46,7 @@ const hunt = () => {
   <Drawer>
     <DrawerTrigger>
       <div
-        class="h-full col-span-1 border-2 p-4 rounded-xl hover:scale-105 scale-100 transition-all cursor-pointer flex flex-col items-start justify-start shadow-lg hover:bg-actions-foreground hover:text-background gap-3"
+        class="h-full col-span-1 p-4 rounded-xl hover:scale-105 scale-100 transition-all cursor-pointer flex flex-col items-start justify-start shadow-lg hover:bg-actions-foreground hover:text-background gap-3"
       >
         <div class="flex items-center justify-between w-full">
           <Icon

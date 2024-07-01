@@ -10,13 +10,13 @@
     --muted: #292524;
     --muted-foreground: #292524;
 
-    --popover: #dedede;
+    --popover: #d8d8d8;
     --popover-foreground: #292524;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
 
-    --border: #658764;
+    --border: #b7b78a;
     --input: #292524;
 
     --primary: #658764;
@@ -35,7 +35,7 @@
 
     --radius: 12px;
 
-    --actions: #dedede;
+    --actions: #d8d8d8;
     --actions-foreground: #bb6b25;
   }
 
@@ -46,13 +46,13 @@
     --muted: #eeeeee;
     --muted-foreground: #eeeeee;
 
-    --popover: #151515;
+    --popover: #303030;
     --popover-foreground: #eeeeee;
 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
 
-    --border: #a0153e;
+    --border: #5d0e41;
     --input: #eeeeee;
 
     --primary: #a0153e;

@@ -22,7 +22,7 @@ const props = defineProps<{
   <Drawer>
     <DrawerTrigger as-child>
       <div
-        class="col-span-1 h-40 border-2 p-4 rounded-xl hover:scale-105 scale-100 transition-all cursor-pointer flex flex-col items-center justify-center shadow-lg hover:bg-actions-foreground hover:text-background gap-4"
+        class="bg-popover border col-span-1 h-40 p-4 rounded-xl hover:scale-105 scale-100 transition-all cursor-pointer flex flex-col items-center justify-center shadow-lg hover:bg-actions-foreground hover:text-background gap-4"
       >
         <Icon :icon="`game-icons:${props.icon}`" class="w-20 h-20" />
         <p class="text-xl font-semibold">

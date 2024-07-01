@@ -42,7 +42,7 @@ const player = ref<Player>({
       <div class="mb-12 max-w-screen-sm">
         <h4 class="text-3xl text-primary font-bold mb-4">Strength</h4>
         <div
-          class="mt-2 h-5 w-[100%] bg-rose-900 border-2 border-rose-600 rounded-sm relative shadow-lg"
+          class="mt-2 h-5 w-[100%] bg-rose-900 border-rose-600 rounded-sm relative shadow-lg"
         >
           <div
             :style="`width: ${
@@ -64,7 +64,7 @@ const player = ref<Player>({
       <div class="mb-12 max-w-sc max-w-screen-sm">
         <h4 class="text-3xl text-primary font-bold mb-4">Agility</h4>
         <div
-          class="mt-2 h-5 w-[100%] bg-lime-900 border-2 border-lime-700 rounded-sm relative shadow-lg"
+          class="mt-2 h-5 w-[100%] bg-lime-900 border-lime-700 rounded-sm relative shadow-lg"
         >
           <div
             :style="`width: ${
@@ -86,7 +86,7 @@ const player = ref<Player>({
       <div class="mb-12 max-w-screen-sm">
         <h4 class="text-3xl text-primary font-bold mb-4">Intelligence</h4>
         <div
-          class="mt-2 h-5 w-[100%] bg-sky-900 border-2 border-sky-700 rounded-sm relative shadow-lg"
+          class="mt-2 h-5 w-[100%] bg-sky-900 border-sky-700 rounded-sm relative shadow-lg"
         >
           <div
             :style="`width: ${
@@ -108,7 +108,7 @@ const player = ref<Player>({
       <div class="mb-12 max-w-screen-sm">
         <h4 class="text-3xl text-primary font-bold mb-4">Vitality</h4>
         <div
-          class="mt-2 h-5 w-[100%] bg-orange-900 border-2 border-orange-700 rounded-sm relative shadow-lg"
+          class="mt-2 h-5 w-[100%] bg-orange-900 border-orange-700 rounded-sm relative shadow-lg"
         >
           <div
             :style="`width: ${
