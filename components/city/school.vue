@@ -12,9 +12,9 @@ const handleConfirm = () => {
 
 <template>
   <CityDrawerCard
-    icon="muscular-torso"
-    text="Training"
-    title="Gym"
+    icon="spell-book"
+    text="School"
+    title="School"
     :handleConfirm="handleConfirm"
   >
     <template #default>
@@ -26,11 +26,11 @@ const handleConfirm = () => {
       <RadioGroup default-value="option-one" class="pt-4">
         <div class="flex items-center space-x-2">
           <RadioGroupItem id="option-one" value="option-one" />
-          <Label for="option-one">Strength</Label>
+          <Label for="option-one">Agility</Label>
         </div>
         <div class="flex items-center space-x-2">
           <RadioGroupItem id="option-two" value="option-two" />
-          <Label for="option-two">Vitality</Label>
+          <Label for="option-two">Intelligence</Label>
         </div>
       </RadioGroup>
       <SharedTimeInput v-model="time" />

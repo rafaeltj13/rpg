@@ -13,7 +13,7 @@ useHead({
       <CityExplore />
       <CityQuests />
       <CityMerchant />
-      <CityStudy />
+      <CitySchool />
       <CityTraining />
       <CityHotel />
       <CityTravel />

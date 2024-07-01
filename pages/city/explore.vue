@@ -18,7 +18,7 @@ onMounted(() => {
 <template>
   <div class="mx-auto">
     <SharedPageTitle title="Explore" />
-    <div class="pt-6 grid grid-cols-4 gap-8">
+    <div class="pt-6 grid grid-cols-5 gap-8">
       <SharedLocationCard
         v-for="loc of locations.filter((loc) => loc.type !== 'city')"
         :key="loc.name"

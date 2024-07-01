@@ -65,7 +65,7 @@ const hunt = () => {
             />
           </div>
           <div v-if="completeLoot.length">
-            <div class="w-[80%] h-[0.25px] bg-primary my-3 px-2"></div>
+            <div class="w-[100%] h-[0.25px] bg-primary my-3 px-2"></div>
             <div class="gap-2 flex flex-wrap">
               <SharedItem
                 v-for="(item, index) of completeLoot"

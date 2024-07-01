@@ -3,7 +3,7 @@ const availableQuests = 40;
 </script>
 
 <template>
-  <CityCard
+  <CityLinkCard
     to="/city/quests"
     icon="stabbed-note"
     text="Quest Board"

@@ -24,7 +24,7 @@ const PLAYER_DEFAULT_STORE: Player = {
   },
 };
 
-export const useSessionStore = defineStore("session", () => {
+export const usePlayerStore = defineStore("player", () => {
   const playerStateRef = ref<Player | null>(PLAYER_DEFAULT_STORE);
 
   const playerState = computed(() => playerStateRef.value);

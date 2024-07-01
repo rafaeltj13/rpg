@@ -22,7 +22,7 @@ const player = ref<Player>({
   },
   attributes: {
     strength: 73,
-    agility: 48,
+    agility: 59,
     intelligence: 21,
     vitality: 68,
   },
@@ -48,7 +48,7 @@ const player = ref<Player>({
             :style="`width: ${
               (player.attributes.strength / MAX_ATTRIBUTE) * 100
             }%`"
-            class="absolute bg-rose-700 rounded-xs h-4 bottom-0"
+            class="absolute from-rose-800 to-rose-600 bg-gradient-to-r rounded-xs h-4 bottom-0"
           ></div>
           <div
             class="h-full w-full flex items-center justify-center text-center"
@@ -70,7 +70,7 @@ const player = ref<Player>({
             :style="`width: ${
               (player.attributes.agility / MAX_ATTRIBUTE) * 100
             }%`"
-            class="absolute bg-lime-700 rounded-xs h-4 bottom-0"
+            class="absolute from-lime-800 to-lime-600 bg-gradient-to-r rounded-xs h-4 bottom-0"
           ></div>
           <div
             class="h-full w-full flex items-center justify-center text-center"
@@ -92,7 +92,7 @@ const player = ref<Player>({
             :style="`width: ${
               (player.attributes.intelligence / MAX_ATTRIBUTE) * 100
             }%`"
-            class="absolute bg-sky-700 rounded-xs h-4 bottom-0"
+            class="absolute from-sky-800 to-sky-500 bg-gradient-to-r rounded-xs h-4 bottom-0"
           ></div>
           <div
             class="h-full w-full flex items-center justify-center text-center"
@@ -114,7 +114,7 @@ const player = ref<Player>({
             :style="`width: ${
               (player.attributes.vitality / MAX_ATTRIBUTE) * 100
             }%`"
-            class="absolute bg-orange-700 rounded-xs h-4 bottom-0"
+            class="absolute from-orange-800 to-orange-500 bg-gradient-to-r rounded-xs h-4 bottom-0"
           ></div>
           <div
             class="h-full w-full flex items-center justify-center text-center"

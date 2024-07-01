@@ -3,7 +3,7 @@ const availableMails = 20;
 </script>
 
 <template>
-  <CityCard
+  <CityLinkCard
     to="/city/mailbox"
     icon="mailbox"
     text="Mailbox"
