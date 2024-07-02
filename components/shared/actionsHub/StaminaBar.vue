@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Icon } from "@iconify/vue";
 const props = defineProps<{
   current: number;
   max: number;
@@ -7,15 +8,19 @@ const props = defineProps<{
 
 <template>
   <div
-    class="h-full w-10 bg-yellow-900 border-yellow-600 rounded-lg relative shadow-md"
+    class="h-4 w-full border bg-yellow-900 border-yellow-600 rounded-lg relative shadow-md"
   >
     <div
-      :style="`height: ${((props.current * 100) / props.max).toFixed(0)}%`"
-      class="absolute bg-yellow-700 rounded-md w-full bottom-0"
+      :style="`width: ${((props.current * 100) / props.max).toFixed(0)}%`"
+      class="absolute bg-yellow-700 rounded-md h-full bottom-0"
     ></div>
     <div class="h-full w-full flex items-center justify-center text-center">
-      <p class="text-xs text-background dark:text-foreground z-50">
-        {{ props.current }}
+      <p
+        class="text-xs text-background dark:text-foreground z-50 flex items-center gap-2"
+      >
+        {{ props.current }} ({{
+          ((props.current * 100) / props.max).toFixed(0)
+        }}%)
       </p>
     </div>
   </div>

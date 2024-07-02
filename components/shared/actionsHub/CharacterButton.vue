@@ -37,7 +37,7 @@ const player = ref<Player>({
     <HoverCardTrigger
       ><NuxtLink
         to="/character"
-        class="bg-popover border w-10 h-10 flex items-center justify-center cursor-pointer rounded-md transition-all hover:scale-110 shadow-md hover:bg-actions-foreground hover:text-background"
+        class="bg-background border w-10 h-10 flex items-center justify-center cursor-pointer rounded-md transition-all hover:scale-110 shadow-md hover:bg-actions-foreground hover:text-background"
       >
         <Icon icon="game-icons:skills" class="w-6 h-6" /></NuxtLink
     ></HoverCardTrigger>

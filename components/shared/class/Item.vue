@@ -17,7 +17,7 @@ const classes = computed(() => {
 <template>
   <div
     :class="classes"
-    class="bg-popover border text-primary hover:scale-125 scale-100 transition-all cursor-pointer flex items-center justify-center shadow-lg hover:bg-actions-foreground hover:text-background"
+    class="bg-background border text-primary hover:scale-125 scale-100 transition-all cursor-pointer flex items-center justify-center shadow-lg hover:bg-actions-foreground hover:text-background"
   >
     <Icon :icon="`game-icons:${props.icon}`" class="w-8 h-8" />
   </div>
