@@ -3,7 +3,25 @@ const animate = require("tailwindcss-animate");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  safelist: ["dark"],
+  safelist: [
+    "dark",
+    "border-rose-600",
+    "bg-rose-900",
+    "from-rose-800",
+    "to-rose-600",
+    "border-lime-600",
+    "bg-lime-900",
+    "from-lime-800",
+    "to-lime-600",
+    "border-sky-600",
+    "bg-sky-900",
+    "from-sky-800",
+    "to-sky-600",
+    "border-orange-600",
+    "bg-orange-900",
+    "from-orange-800",
+    "to-orange-600",
+  ],
   prefix: "",
   theme: {
     container: {

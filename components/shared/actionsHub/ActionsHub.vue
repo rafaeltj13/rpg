@@ -9,7 +9,7 @@ import { Icon } from "@iconify/vue";
       <SharedActionsHubQuestButton />
       <SharedActionsHubMapButton />
       <SharedClassItem icon="wood-axe" type="sm" />
-      <SharedActionsHubAttributesButton />
+      <SharedActionsHubCharacterButton />
       <SharedActionsHubBackpackButton />
     </div>
     <SharedActionsHubStaminaBar :current="20" :max="110" />

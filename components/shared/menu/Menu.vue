@@ -41,7 +41,7 @@ import { Icon } from "@iconify/vue";
             <p class="text-md">Map</p>
           </DropdownMenuItem>
         </NuxtLink>
-        <NuxtLink class="cursor-pointer" to="/attributes">
+        <NuxtLink class="cursor-pointer" to="/character">
           <DropdownMenuItem>
             <Icon icon="game-icons:skills" class="h-[1.5rem] w-[1.5rem] mr-2" />
             <p class="text-md">Character</p>
