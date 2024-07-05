@@ -1,15 +1,15 @@
 <script setup lang="ts">
 const modelValue = defineModel<number>("modelValue");
-modelValue.value = 10;
+modelValue.value = 30;
 
 function increase() {
-  modelValue.value = (modelValue.value ?? 0) + 10;
+  modelValue.value = (modelValue.value ?? 0) + 30;
 }
 
 function decrease() {
-  if ((modelValue.value ?? 0) - 10 < 10) return;
+  if ((modelValue.value ?? 0) - 30 < 30) return;
 
-  modelValue.value = (modelValue.value ?? 0) - 10;
+  modelValue.value = (modelValue.value ?? 0) - 30;
 }
 </script>
 

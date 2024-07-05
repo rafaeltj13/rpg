@@ -9,7 +9,9 @@
         Experience gaming that fits your schedule, without missing a beat.
       </p>
       <div class="flex items-center justify-center gap-4">
-        <Button variant="secondary" size="lg">Create Account</Button>
+        <NuxtLink to="/signup">
+          <Button variant="secondary" size="lg">Create Account</Button>
+        </NuxtLink>
         <LoginButton />
       </div>
     </div>

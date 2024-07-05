@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Skeleton } from "@/components/ui/skeleton";
+
 const MAX_ATTRIBUTE = 99;
 
 const props = defineProps<{
@@ -8,7 +10,11 @@ const props = defineProps<{
 </script>
 
 <template>
+  <div v-if="!props.attribute">
+    <Skeleton class="h-6 w-[100%]" />
+  </div>
   <div
+    v-else
     :class="[`bg-${props.color}-900 border-2 !border-${props.color}-600`]"
     class="mt-2 h-6 w-[100%] rounded-sm relative shadow-lg"
   >

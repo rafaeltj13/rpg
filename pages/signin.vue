@@ -3,9 +3,9 @@
     <div class="flex items-center justify-center py-12 h-full">
       <div class="mx-auto grid w-[350px] gap-6">
         <div class="grid gap-2 text-center">
-          <h1 class="text-3xl font-bold">Login</h1>
+          <h1 class="text-3xl font-bold">Sign in</h1>
           <p class="text-balance text-muted-foreground">
-            Enter your email below to login to your account
+            Enter your email below to sign in to your account
           </p>
         </div>
         <div class="grid gap-4">
@@ -14,7 +14,7 @@
             <Input
               id="email"
               type="email"
-              placeholder="m@example.com"
+              placeholder="miniRPG@example.com"
               required
             />
           </div>
@@ -30,7 +30,7 @@
             </div>
             <Input id="password" type="password" required />
           </div>
-          <Button type="submit" class="w-full py-2"> Login </Button>
+          <Button type="submit" class="w-full py-2"> Enter </Button>
           <div class="flex items-center">
             <div class="w-[100%] h-[0.25px] bg-secondary"></div>
             <p class="text-center px-6">or</p>
@@ -46,7 +46,7 @@
         </div>
         <div class="mt-4 text-center text-sm">
           Don't have an account?
-          <a href="#" class="underline"> Sign up </a>
+          <a href="/signup" class="underline"> Sign up </a>
         </div>
       </div>
     </div>
@@ -57,7 +57,7 @@
 import { useSupabase } from "~/composables/api/useSupabase";
 
 definePageMeta({
-  layout: "login",
+  layout: "auth",
 });
 
 const handleLoginWithGoogle = async () => {

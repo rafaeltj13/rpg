@@ -28,7 +28,10 @@ onUnmounted(() => {
     <ClientOnly>
       <div class="flex items-center gap-2">
         <SharedMenu />
-        <p class="font-bold">miniRPG</p>
+        <p class="font-bold text-xl flex items-center">
+          <img src="/public/logo.png" alt="miniRPG" class="h-10 w-10" />
+          miniRPG
+        </p>
       </div>
       <div class="flex items-center gap-2">
         <div class="h-full flex flex-col items-center justify-center">

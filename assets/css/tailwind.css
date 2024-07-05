@@ -7,8 +7,8 @@
     --background: #dedede;
     --foreground: #292524;
 
-    --muted: #292524;
-    --muted-foreground: #292524;
+    --muted: #1a1a1a;
+    --muted-foreground: #1a1a1a;
 
     --popover: #d8d8d8;
     --popover-foreground: #292524;
@@ -44,7 +44,7 @@
     --foreground: #eeeeee;
 
     --muted: #eeeeee;
-    --muted-foreground: #eeeeee;
+    --muted-foreground: #d8d8d8;
 
     --popover: #1a1a1a;
     --popover-foreground: #eeeeee;
