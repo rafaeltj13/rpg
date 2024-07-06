@@ -23,8 +23,19 @@ const handleSignUpWithGoogle = async () => {
       redirectTo: "http://localhost:3000/city",
     },
   });
+};
 
-  navigateTo("/city");
+const handleSignUpEmail = async ({
+  email,
+  password,
+}: {
+  email: string;
+  password: string;
+}) => {
+  const { data, error } = await useSupabase().auth.signUp({
+    email,
+    password,
+  });
 };
 
 const formSchema = toTypedSchema(
@@ -40,7 +51,10 @@ const { handleSubmit, isFieldDirty } = useForm({
 });
 
 const onSubmit = handleSubmit((values) => {
-  console.log("Form submitted!", values);
+  handleSignUpEmail({
+    email: values.email as string,
+    password: values.password as string,
+  });
 });
 </script>
 
@@ -48,7 +62,13 @@ const onSubmit = handleSubmit((values) => {
   <div class="w-full h-[100vh]">
     <div class="flex items-center justify-center py-12 h-full">
       <ClientOnly>
-        <div class="mx-auto grid w-[350px] gap-6">
+        <div class="mx-auto grid w-[350px] gap-4">
+          <img
+            src="/public/logo.png"
+            alt="miniRPG"
+            class="h-20 w-20 mx-auto cursor-pointer transition-all hover:scale-110"
+            @click="navigateTo('/')"
+          />
           <div class="grid gap-2 text-center">
             <h1 class="text-3xl font-bold">Sign up</h1>
             <p class="text-balance text-muted-foreground">

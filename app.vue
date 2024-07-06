@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Toaster from "@/components/ui/sonner/Sonner.vue";
+import { useSupabase } from "@/composables/api/useSupabase";
 </script>
 
 <template>

@@ -7,11 +7,13 @@ definePageMeta({
 <template>
   <div class="font-['Montserrat']">
     <LandingHero />
-    <div class="max-w-[1366px] mx-auto px-8">
-      <LandingTimeSection />
-      <LandingSkillsSection />
-      <LandingBento />
-    </div>
+    <ClientOnly>
+      <div class="max-w-[1366px] mx-auto px-8">
+        <LandingTimeSection />
+        <LandingSkillsSection />
+        <LandingBento />
+      </div>
+    </ClientOnly>
     <LandingFooter />
   </div>
 </template>

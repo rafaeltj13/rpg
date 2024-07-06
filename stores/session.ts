@@ -33,12 +33,6 @@ export const useSessionStore = defineStore("session", () => {
     accessTokenRef.value = token;
     authIdRef.value = sessionId;
     emailRef.value = sessionEmail;
-
-    console.log({
-      accessToken: accessTokenRef.value,
-      authId: authIdRef.value,
-      email: emailRef.value,
-    });
   }
 
   return { token, authId, email, setSession };

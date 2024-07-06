@@ -1,15 +1,41 @@
 <script setup lang="ts">
 import { useSupabase } from "~/composables/api/useSupabase";
+import { toast } from "vue-sonner";
 
 const { setSession } = useSessionStore();
 
-useSupabase().auth.onAuthStateChange(async (_, session) => {
-  if (!session) return;
+onMounted(() => {
+  useSupabase().auth.onAuthStateChange(async (event, session) => {
+    console.log({ session });
 
-  setSession({
-    token: session?.access_token || null,
-    sessionId: session?.user.id || null,
-    sessionEmail: session?.user.email || null,
+    if (!session) {
+      setSession({
+        token: null,
+        sessionId: null,
+        sessionEmail: null,
+      });
+
+      setTimeout(() => {
+        toast("You signed out", {
+          description: ``,
+        });
+      }, 500);
+
+      navigateTo("/signin");
+      return;
+    } else if (event === "SIGNED_IN") {
+      toast("Welcome back!", {
+        description: ``,
+      });
+
+      setSession({
+        token: session?.access_token || null,
+        sessionId: session?.user.id || null,
+        sessionEmail: session?.user.email || null,
+      });
+
+      navigateTo("/city");
+    }
   });
 });
 </script>

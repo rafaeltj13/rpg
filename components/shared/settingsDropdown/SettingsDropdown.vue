@@ -4,9 +4,6 @@ import { useSupabase } from "~/composables/api/useSupabase";
 
 const handleLogout = async () => {
   await useSupabase().auth.signOut();
-
-  navigateTo("/signin");
-  // Empty user data in state
 };
 </script>
 
