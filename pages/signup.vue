@@ -11,10 +11,13 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { toast } from "vue-sonner";
 
 definePageMeta({
   layout: "auth",
 });
+
+const loading = ref(false);
 
 const handleSignUpWithGoogle = async () => {
   await useSupabase().auth.signInWithOAuth({
@@ -32,10 +35,22 @@ const handleSignUpEmail = async ({
   email: string;
   password: string;
 }) => {
+  loading.value = true;
   const { data, error } = await useSupabase().auth.signUp({
     email,
     password,
   });
+
+  loading.value = false;
+  console.log({ data });
+
+  if (error) {
+    toast("Error", {
+      description: error.message,
+    });
+
+    return;
+  }
 };
 
 const formSchema = toTypedSchema(
@@ -134,7 +149,12 @@ const onSubmit = handleSubmit((values) => {
                 <FormMessage />
               </FormItem>
             </FormField>
-            <Button type="submit" class="w-full py-2"> Continue </Button>
+            <Button v-if="!loading" type="submit" class="w-full py-2">
+              Continue
+            </Button>
+            <div v-else class="w-full flex items-center justify-center pt-4">
+              <SharedLoading />
+            </div>
           </form>
           <div class="flex items-center">
             <div class="w-[100%] h-[0.25px] bg-secondary"></div>

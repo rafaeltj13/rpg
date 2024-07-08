@@ -9,6 +9,8 @@ definePageMeta({
   layout: "auth",
 });
 
+const loading = ref(false);
+
 const handleLoginWithGoogle = async () => {
   await useSupabase().auth.signInWithOAuth({
     provider: "google",
@@ -25,10 +27,14 @@ const handleLoginWithEmail = async ({
   email: string;
   password: string;
 }) => {
+  loading.value = true;
   const { data, error } = await useSupabase().auth.signInWithPassword({
     email,
     password,
   });
+
+  console.log({ data });
+  loading.value = false;
 
   if (error) {
     toast("Error", {
@@ -38,7 +44,6 @@ const handleLoginWithEmail = async ({
     return;
   }
 
-  console.log({ data });
   //TODO - set session
 };
 
@@ -122,7 +127,12 @@ const onSubmit = handleSubmit((values) => {
                 <FormMessage />
               </FormItem>
             </FormField>
-            <Button type="submit" class="w-full py-2"> Enter </Button>
+            <Button v-if="!loading" type="submit" class="w-full py-2">
+              Enter
+            </Button>
+            <div v-else class="w-full flex items-center justify-center pt-4">
+              <SharedLoading />
+            </div>
             <div class="flex items-center">
               <div class="w-[100%] h-[0.25px] bg-secondary"></div>
               <p class="text-center px-6">or</p>
