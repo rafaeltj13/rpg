@@ -4,13 +4,14 @@ export type Player = {
   name: string;
   age: number;
   country: string;
+  email: string;
   honor: number;
   quests?: Quest[];
   completedQuests?: Quest[];
-  currentLocation: Location;
+  currentLocation: Location["id"];
   inventory?: Inventory;
   class?: Class;
-  attributes: Attributes;
+  attributes: Attributes["id"];
 };
 
 export type Class = {
@@ -21,7 +22,7 @@ export type Class = {
 };
 
 export type Attributes = {
-  id?: number;
+  id: number | null;
   created_at?: number;
   player?: number;
   strength: number;
@@ -60,7 +61,7 @@ export type ItemType =
   | "collectable";
 
 export type Location = {
-  id?: number;
+  id: number | null;
   created_at?: number;
   name: string;
   npcs: NPC[];

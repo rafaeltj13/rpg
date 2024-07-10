@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { useSupabase } from "~/composables/api/useSupabase";
 import { toast } from "vue-sonner";
+import { usePlayer } from "~/composables/api/usePlayer";
 
 const { setSession } = useSessionStore();
 
 onMounted(() => {
   useSupabase().auth.onAuthStateChange(async (event, session) => {
-    console.log({ session });
+    console.log({ event, session });
 
     if (!session) {
       setSession({
@@ -23,18 +24,22 @@ onMounted(() => {
 
       navigateTo("/signin");
       return;
-    } else if (event === "SIGNED_IN") {
-      toast("Welcome back!", {
-        description: ``,
-      });
+    }
 
-      setSession({
-        token: session?.access_token || null,
-        sessionId: session?.user.id || null,
-        sessionEmail: session?.user.email || null,
-      });
+    setSession({
+      token: session?.access_token || null,
+      sessionId: session?.user.id || null,
+      sessionEmail: session?.user.email || null,
+    });
 
-      navigateTo("/city");
+    const player = await usePlayer().getPlayerByEmail(
+      session?.user.email || ""
+    );
+
+    if (!player) {
+      navigateTo("/info");
+    } else {
+      usePlayerStore().setPlayerState({ player });
     }
   });
 });

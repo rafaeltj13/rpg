@@ -42,7 +42,6 @@ const handleSignUpEmail = async ({
   });
 
   loading.value = false;
-  console.log({ data });
 
   if (error) {
     toast("Error", {
@@ -51,6 +50,8 @@ const handleSignUpEmail = async ({
 
     return;
   }
+
+  navigateTo("/signin");
 };
 
 const formSchema = toTypedSchema(
@@ -77,7 +78,7 @@ const onSubmit = handleSubmit((values) => {
   <div class="w-full h-[100vh]">
     <div class="flex items-center justify-center py-12 h-full">
       <ClientOnly>
-        <div class="mx-auto grid w-[350px] gap-4">
+        <div class="mx-auto grid min-w-[420px] gap-4">
           <img
             src="/public/logo.png"
             alt="miniRPG"
