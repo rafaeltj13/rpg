@@ -9,7 +9,14 @@ const PLAYER_DEFAULT_STORE: Player = {
   honor: 0,
   quests: [],
   completedQuests: [],
-  currentLocation: null,
+  currentLocation: {
+    id: null,
+    name: "",
+    npcs: [],
+    monsters: [],
+    type: "city",
+    area: "sole"
+  },
   attributes: null,
 };
 
@@ -21,10 +28,10 @@ export const usePlayerStore = defineStore("player", () => {
   function setPlayerState({ player }: { player: Player | null }) {
     playerStateRef.value = player || PLAYER_DEFAULT_STORE;
 
-    console.log({
+    console.log('player store', {
       playerState: playerStateRef.value,
     });
   }
 
-  return { playerState, setPlayerState };
+  return { playerStateRef, playerState, setPlayerState };
 });

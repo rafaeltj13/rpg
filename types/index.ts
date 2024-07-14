@@ -8,7 +8,7 @@ export type Player = {
   honor: number;
   quests?: Quest[];
   completedQuests?: Quest[];
-  currentLocation: Location["id"];
+  currentLocation: Location;
   inventory?: Inventory;
   class?: Class;
   attributes: Attributes["id"];
@@ -67,6 +67,7 @@ export type Location = {
   npcs: NPC[];
   monsters: Monster[];
   type: LocationType;
+  area: string
 };
 
 export type LocationType = "city" | "dungeon" | "forest";

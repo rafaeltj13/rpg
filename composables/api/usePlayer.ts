@@ -43,7 +43,7 @@ export const usePlayer = () => {
   const getPlayerByEmail = async (email: string) => {
     const { data, error } = await useSupabase()
       .from("players")
-      .select("*")
+      .select("*, locations(area)")
       .eq("email", email)
       .single();
 
