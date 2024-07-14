@@ -29,7 +29,7 @@ export const usePlayer = () => {
     const { data, error } = await useSupabase()
         .from("players")    
         .insert([{ name, age, country, email, currentLocation: 1, attributes: attributes.id }])
-        .select()
+        .select("*, currentLocation(*), attributes(*)")
         .single();
 
     if (error) {
@@ -43,9 +43,11 @@ export const usePlayer = () => {
   const getPlayerByEmail = async (email: string) => {
     const { data, error } = await useSupabase()
       .from("players")
-      .select("*, locations(area)")
+      .select("*, currentLocation(*), attributes(*)")
       .eq("email", email)
       .single();
+
+    console.log({getPlayerByEmail:data})
 
     if (error) {
       console.error("Error fetching player by email:", error);

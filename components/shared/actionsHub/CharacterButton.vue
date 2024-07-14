@@ -5,35 +5,16 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { Icon } from "@iconify/vue";
-import type { Player } from "~/types";
 
-const player = ref<Player>({
-  name: "TJ-",
-  age: 27,
-  country: "BR",
-  honor: 260,
-  created_at: new Date(),
-  class: {
-    name: "Swordsman",
-    icon: "wood-axe",
-  },
-  currentLocation: {
-    name: "Sole",
-    type: "city",
-    monsters: [],
-    npcs: [],
-  },
-  attributes: {
-    strength: 73,
-    agility: 59,
-    intelligence: 21,
-    vitality: 68,
-  },
-});
+import { usePlayerStore } from "~/stores/player";
+
+const playerStore = usePlayerStore();
+
+const playerState = computed(() => playerStore.playerState);
 </script>
 
 <template>
-  <HoverCard>
+  <HoverCard v-if="Object.keys(playerState.attributes).length > 0">
     <HoverCardTrigger
       ><NuxtLink
         to="/character"
@@ -45,19 +26,23 @@ const player = ref<Player>({
       <div class="w-full">
         <h6 class="text-lg text-primary font-bold">Attributes</h6>
         <CharacterAttributesBar
-          :attribute="player.attributes.strength"
+          v-if="playerState.attributes.strength"
+          :attribute="playerState.attributes.strength"
           color="rose"
         />
         <CharacterAttributesBar
-          :attribute="player.attributes.agility"
+          v-if="playerState.attributes.agility"
+          :attribute="playerState.attributes.agility"
           color="lime"
         />
         <CharacterAttributesBar
-          :attribute="player.attributes.intelligence"
+          v-if="playerState.attributes.intelligence"
+          :attribute="playerState.attributes.intelligence"
           color="sky"
         />
         <CharacterAttributesBar
-          :attribute="player.attributes.vitality"
+          v-if="playerState.attributes.vitality"
+          :attribute="playerState.attributes.vitality"
           color="orange"
         />
       </div>

@@ -17,7 +17,13 @@ const PLAYER_DEFAULT_STORE: Player = {
     type: "city",
     area: "sole"
   },
-  attributes: null,
+  attributes: {
+    id: null,
+    strength: 0,
+    agility: 0,
+    intelligence: 0,
+    vitality: 0
+  },
 };
 
 export const usePlayerStore = defineStore("player", () => {

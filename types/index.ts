@@ -11,7 +11,7 @@ export type Player = {
   currentLocation: Location;
   inventory?: Inventory;
   class?: Class;
-  attributes: Attributes["id"];
+  attributes: Attributes;
 };
 
 export type Class = {

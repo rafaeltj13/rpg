@@ -10,7 +10,6 @@ const loading = ref(true);
 async function getLocations() {
   loading.value = true;
   locationByArea.value = await getMapLocations();
-  console.log({ data: locationByArea.value });
   loading.value = false;
 }
 
