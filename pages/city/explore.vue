@@ -6,7 +6,7 @@ const { getExploreLocations } = useLocations();
 const { playerState } = usePlayerStore();
 
 const locations = ref<Location[]>([]);
-const loading = ref(false);
+const loading = ref(true);
 
 async function getLocations() {
   loading.value = true;
@@ -38,12 +38,17 @@ onMounted(() => {
 <template>
   <div class="mx-auto">
     <SharedPageTitle title="Explore" />
-    <div class="pt-6 grid grid-cols-5 gap-8">
-      <SharedLocationExploreCard
-        v-for="loc of locations.filter((loc) => loc.type !== 'city')"
-        :key="loc.name"
-        :location="loc"
-      />
+    <div v-if="loading">
+      <ExploreLoading />
+    </div>
+    <div v-else>
+      <div class="pt-6 grid grid-cols-5 gap-8">
+        <SharedLocationExploreCard
+          v-for="loc of locations.filter((loc) => loc.type !== 'city')"
+          :key="loc.name"
+          :location="loc"
+        />
+      </div>
     </div>
   </div>
 </template>

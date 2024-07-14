@@ -22,7 +22,11 @@ onMounted(() => {
 <template>
   <div>
     <SharedPageTitle title="Map" />
-    <div v-if="loading">Loading...</div>
+    <div v-if="loading">
+      <ExploreLoading />
+      <div class="w-full h-[0.1px] my-8 bg-primary"></div>
+      <ExploreLoading />
+    </div>
     <div v-else>
       <div
         v-for="(area, index) in Object.entries(locationByArea)"
