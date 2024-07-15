@@ -22,7 +22,6 @@ watch(
   () => playerState,
   (newState, oldState) => {
     if (newState.currentLocation?.id !== oldState.currentLocation?.id) {
-      console.log("Player location changed", { newState, oldState });
       getLocations();
     }
   },

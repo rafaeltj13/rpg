@@ -8,7 +8,7 @@ const props = defineProps<{
 
 <template>
   <div
-    class="h-4 w-full border bg-red-900 dark:border-[0.5px] border-red-600 rounded-lg relative shadow-md"
+    class="h-5 w-28 border bg-red-900 dark:border-[0.5px] border-red-600 rounded-lg relative shadow-md"
   >
     <div
       :style="`width: ${((props.current * 100) / props.max).toFixed(0)}%`"
@@ -21,6 +21,7 @@ const props = defineProps<{
         {{ props.current }} ({{
           ((props.current * 100) / props.max).toFixed(0)
         }}%)
+        <Icon icon="game-icons:hearts" class="h-2 w-2" />
       </p>
     </div>
   </div>

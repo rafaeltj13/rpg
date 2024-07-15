@@ -10,10 +10,6 @@ import { usePlayerStore } from "~/stores/player";
 const playerStore = usePlayerStore();
 
 const playerState = computed(() => playerStore.playerState);
-
-onMounted(() => {
-  console.log("playerState", playerState.value.currentLocation);
-});
 </script>
 
 <template>

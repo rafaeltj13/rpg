@@ -33,10 +33,6 @@ export const usePlayerStore = defineStore("player", () => {
 
   function setPlayerState({ player }: { player: Player | null }) {
     playerStateRef.value = player || PLAYER_DEFAULT_STORE;
-
-    console.log('player store', {
-      playerState: playerStateRef.value,
-    });
   }
 
   return { playerStateRef, playerState, setPlayerState };

@@ -47,8 +47,6 @@ export const usePlayer = () => {
       .eq("email", email)
       .single();
 
-    console.log({getPlayerByEmail:data})
-
     if (error) {
       console.error("Error fetching player by email:", error);
       return null;
