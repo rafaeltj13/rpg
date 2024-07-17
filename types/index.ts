@@ -34,12 +34,33 @@ export type Attributes = {
 export type Inventory = {
   id?: number;
   created_at?: number;
-  player: number;
+  player: Player["id"];
   heml: Item;
   chest: Item;
+  gloves: Item;
   boots: Item;
   weapon: Item;
-  backpack: Item[];
+  offHand: Item;
+  slot1: Item;
+  slot2: Item;
+  slot3: Item;
+  slot4: Item;
+  slot5: Item;
+  slot6: Item;
+  slot7: Item;
+  slot8: Item;
+  slot9: Item;
+  slot10: Item;
+  slot11: Item;
+  slot12: Item;
+  slot13: Item;
+  slot14: Item;
+  slot15: Item;
+  slot16: Item;
+  slot17: Item;
+  slot18: Item;
+  slot19: Item;
+  slot20: Item;
 };
 
 export type Item = {

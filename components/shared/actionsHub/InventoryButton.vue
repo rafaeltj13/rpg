@@ -16,7 +16,8 @@ import { Icon } from "@iconify/vue";
         <Icon icon="game-icons:backpack" class="w-6 h-6" /></div
     ></img></HoverCardTrigger>
     <HoverCardContent>
-      <div class="w-full text-xl">Backpack</div>
+      <div class="w-full text-xl">Inventory
+      </div>
     </HoverCardContent>
   </HoverCard>
 </template>

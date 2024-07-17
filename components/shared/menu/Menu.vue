@@ -47,13 +47,13 @@ import { Icon } from "@iconify/vue";
             <p class="text-md">Character</p>
           </DropdownMenuItem>
         </NuxtLink>
-        <NuxtLink class="cursor-pointer" to="/backpack">
+        <NuxtLink class="cursor-pointer" to="/inventory">
           <DropdownMenuItem>
             <Icon
               icon="game-icons:backpack"
               class="h-[1.5rem] w-[1.5rem] mr-2"
             />
-            <p class="text-md">Backpack</p>
+            <p class="text-md">Inventory</p>
           </DropdownMenuItem>
         </NuxtLink>
       </DropdownMenuContent>

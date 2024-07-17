@@ -11,7 +11,7 @@ const handleCollect = () => {
   router.push({ name: "city" });
 
   toast("Items collected", {
-    description: `${loot.length} itens added to backpack`,
+    description: `${loot.length} itens added to inventory`,
   });
 };
 </script>
