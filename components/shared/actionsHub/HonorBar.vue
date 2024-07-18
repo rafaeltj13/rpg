@@ -9,7 +9,7 @@ const props = defineProps<{
 
 <template>
   <div
-    class="h-5 w-full bg-indigo-700 border-indigo-500 border rounded-md relative shadow-md"
+    class="h-4 w-full bg-indigo-700 border-indigo-500 border rounded-md relative shadow-md"
   >
     <div
       :style="`width: ${((props.current * 100) / props.max).toFixed(0)}%`"

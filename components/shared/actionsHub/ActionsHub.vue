@@ -12,12 +12,12 @@
             <SharedActionsHubStaminaBar :current="20" :max="110" />
           </div>
         </div>
-        <div class="text-primary flex justify-center items-center gap-2">
+        <!-- <div class="text-primary flex justify-center items-center gap-2">
           <SharedActionsHubQuestButton />
           <SharedActionsHubMapButton />
           <SharedActionsHubCharacterButton />
           <SharedActionsHubInventoryButton />
-        </div>
+        </div> -->
       </div>
       <SharedActionsHubHonorBar class="mt-2" :current="260" :max="550" />
     </div>

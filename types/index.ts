@@ -18,7 +18,7 @@ export type Class = {
   id?: number;
   created_at?: number;
   name: string;
-  icon: string;
+  icon?: string;
 };
 
 export type Attributes = {
@@ -35,32 +35,32 @@ export type Inventory = {
   id?: number;
   created_at?: number;
   player: Player["id"];
-  heml: Item;
-  chest: Item;
-  gloves: Item;
-  boots: Item;
-  weapon: Item;
-  offHand: Item;
-  slot1: Item;
-  slot2: Item;
-  slot3: Item;
-  slot4: Item;
-  slot5: Item;
-  slot6: Item;
-  slot7: Item;
-  slot8: Item;
-  slot9: Item;
-  slot10: Item;
-  slot11: Item;
-  slot12: Item;
-  slot13: Item;
-  slot14: Item;
-  slot15: Item;
-  slot16: Item;
-  slot17: Item;
-  slot18: Item;
-  slot19: Item;
-  slot20: Item;
+  helmet: Item | null;
+  chest: Item | null;
+  gloves: Item | null;
+  boots: Item | null;
+  weapon: Item | null;
+  offHand: Item | null;
+  slot1: Item | null;
+  slot2: Item | null;
+  slot3: Item | null;
+  slot4: Item | null;
+  slot5: Item | null;
+  slot6: Item | null;
+  slot7: Item | null;
+  slot8: Item | null;
+  slot9: Item | null;
+  slot10: Item | null;
+  slot11: Item | null;
+  slot12: Item | null;
+  slot13: Item | null;
+  slot14: Item | null;
+  slot15: Item | null;
+  slot16: Item | null;
+  slot17: Item | null;
+  slot18: Item | null;
+  slot19: Item | null;
+  slot20: Item | null;
 };
 
 export type Item = {
@@ -68,15 +68,23 @@ export type Item = {
   created_at?: number;
   name: string;
   icon: string;
-  type: ItemType;
-  skill: Skill;
+  type?: ItemType;
+  skill?: Skill;
+  class?: Class;
   stats?: { type: Attributes }[];
+  description?: string;
+  strength?: number;
+  agility?: number;
+  intelligence?: number;
+  vitality?: number;
 };
 
 export type ItemType =
   | "weapon"
-  | "heml"
+  | "offHand"
+  | "helmet"
   | "chest"
+  | "gloves"
   | "boots"
   | "consumable"
   | "collectable";
