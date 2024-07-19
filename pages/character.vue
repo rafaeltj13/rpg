@@ -40,28 +40,28 @@ const player = ref<Player>({
         <h4 class="text-3xl text-primary font-bold mb-4">Strength</h4>
         <CharacterAttributesBar
           :attribute="player.attributes.strength"
-          color="rose"
+          color="strength"
         />
       </div>
       <div class="mb-12 max-w-sc max-w-screen-sm">
         <h4 class="text-3xl text-primary font-bold mb-4">Agility</h4>
         <CharacterAttributesBar
           :attribute="player.attributes.agility"
-          color="lime"
+          color="agility"
         />
       </div>
       <div class="mb-12 max-w-screen-sm">
         <h4 class="text-3xl text-primary font-bold mb-4">Intelligence</h4>
         <CharacterAttributesBar
           :attribute="player.attributes.intelligence"
-          color="sky"
+          color="intelligence"
         />
       </div>
       <div class="mb-12 max-w-screen-sm">
         <h4 class="text-3xl text-primary font-bold mb-4">Vitality</h4>
         <CharacterAttributesBar
           :attribute="player.attributes.vitality"
-          color="orange"
+          color="vitality"
         />
       </div>
     </div>

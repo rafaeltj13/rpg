@@ -49,6 +49,7 @@ const myInventory = ref<Inventory>({
     description: "Heals 50 health",
     icon: "potion-ball",
     type: "consumable",
+    quantity: 2,
   },
   slot2: {
     id: 8,
@@ -56,14 +57,22 @@ const myInventory = ref<Inventory>({
     description: "Heals 50 health",
     icon: "magic-potion",
     type: "consumable",
+    quantity: 4,
   },
-  slot3: { id: 9, name: "Gold Coin", icon: "coins", type: "collectable" },
+  slot3: {
+    id: 9,
+    name: "Gold Coin",
+    icon: "coins",
+    type: "collectable",
+    quantity: 1,
+  },
   slot4: {
     id: 10,
     name: "Silver Ore",
     description: "Used to smelt silver",
     icon: "ore",
     type: "collectable",
+    quantity: 2,
   },
   slot5: {
     id: 11,
@@ -71,6 +80,7 @@ const myInventory = ref<Inventory>({
     description: "Used to smelt iron",
     icon: "rock",
     type: "collectable",
+    quantity: 2,
   },
   slot6: {
     id: 12,
@@ -78,6 +88,7 @@ const myInventory = ref<Inventory>({
     description: "Used to make a wooden bow",
     icon: "wood-stick",
     type: "collectable",
+    quantity: 12,
   },
   slot7: {
     id: 13,

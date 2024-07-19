@@ -37,6 +37,18 @@
 
     --actions: #d8d8d8;
     --actions-foreground: #bb6b25;
+
+    --strength: #bb6b25;
+    --strength-foreground: #d8d8d8;
+
+    --agility: #6b8e23;
+    --agility-foreground: #d8d8d8;
+
+    --intelligence: #236b8e;
+    --intelligence-foreground: #d8d8d8;
+
+    --vitality: #8e236b;
+    --vitality-foreground: #d8d8d8;
   }
 
   .dark {
@@ -71,6 +83,18 @@
 
     --actions: #151515;
     --actions-foreground: #ff6347;
+
+    --strength: #bb6b25;
+    --strength-foreground: #d8d8d8;
+
+    --agility: #6b8e23;
+    --agility-foreground: #d8d8d8;
+
+    --intelligence: #236b8e;
+    --intelligence-foreground: #d8d8d8;
+
+    --vitality: #8e236b;
+    --vitality-foreground: #d8d8d8;
   }
 }
 

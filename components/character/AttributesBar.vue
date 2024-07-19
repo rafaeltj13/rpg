@@ -15,12 +15,12 @@ const props = defineProps<{
   </div>
   <div
     v-else
-    :class="[`bg-${props.color}-900 border-2 !border-${props.color}-600`]"
+    :class="[`bg-${props.color} border-2 !border-${props.color}-foreground`]"
     class="mt-2 h-6 w-[100%] rounded-sm relative shadow-lg"
   >
     <div
       :style="`width: ${(props.attribute / MAX_ATTRIBUTE) * 100}%`"
-      :class="[`from-${props.color}-800 to-${props.color}-600`]"
+      :class="[`from-${props.color} to-${props.color}-foreground`]"
       class="absolute bg-gradient-to-r rounded-sm h-5 bottom-0"
     ></div>
     <div class="h-full w-full flex items-center justify-center text-center">

@@ -41,26 +41,30 @@ export type Inventory = {
   boots: Item | null;
   weapon: Item | null;
   offHand: Item | null;
-  slot1: Item | null;
-  slot2: Item | null;
-  slot3: Item | null;
-  slot4: Item | null;
-  slot5: Item | null;
-  slot6: Item | null;
-  slot7: Item | null;
-  slot8: Item | null;
-  slot9: Item | null;
-  slot10: Item | null;
-  slot11: Item | null;
-  slot12: Item | null;
-  slot13: Item | null;
-  slot14: Item | null;
-  slot15: Item | null;
-  slot16: Item | null;
-  slot17: Item | null;
-  slot18: Item | null;
-  slot19: Item | null;
-  slot20: Item | null;
+  slot1: ItemStack | null;
+  slot2: ItemStack | null;
+  slot3: ItemStack | null;
+  slot4: ItemStack | null;
+  slot5: ItemStack | null;
+  slot6: ItemStack | null;
+  slot7: ItemStack | null;
+  slot8: ItemStack | null;
+  slot9: ItemStack | null;
+  slot10: ItemStack | null;
+  slot11: ItemStack | null;
+  slot12: ItemStack | null;
+  slot13: ItemStack | null;
+  slot14: ItemStack | null;
+  slot15: ItemStack | null;
+  slot16: ItemStack | null;
+  slot17: ItemStack | null;
+  slot18: ItemStack | null;
+  slot19: ItemStack | null;
+  slot20: ItemStack | null;
+};
+
+export type ItemStack = Item & {
+  quantity?: number;
 };
 
 export type Item = {
