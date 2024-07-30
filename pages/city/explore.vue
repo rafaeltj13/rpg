@@ -17,17 +17,6 @@ async function getLocations() {
   loading.value = false;
 }
 
-// Watch for changes in the entire playerState
-watch(
-  () => playerState,
-  (newState, oldState) => {
-    if (newState.currentLocation?.id !== oldState.currentLocation?.id) {
-      getLocations();
-    }
-  },
-  { deep: true }
-);
-
 // Initial fetch of locations
 onMounted(() => {
   getLocations();

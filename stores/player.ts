@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import type { Player } from "~/types";
 
 const PLAYER_DEFAULT_STORE: Player = {
+  id: null,
   name: "",
   age: 0,
   country: "",
@@ -30,10 +31,12 @@ export const usePlayerStore = defineStore("player", () => {
   const playerStateRef = ref<Player>(PLAYER_DEFAULT_STORE);
 
   const playerState = computed(() => playerStateRef.value);
+  const playerId = computed(() => playerStateRef.value.id)
 
   function setPlayerState({ player }: { player: Player | null }) {
     playerStateRef.value = player || PLAYER_DEFAULT_STORE;
+    console.log({ playerStateRef: playerStateRef.value });
   }
 
-  return { playerStateRef, playerState, setPlayerState };
+  return { playerStateRef, playerState, playerId, setPlayerState };
 });

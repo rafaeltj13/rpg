@@ -1,4 +1,5 @@
-import type { Inventory, Item } from "~/types";
+import type { Equipment, InventorySlot, Item } from "~/types";
+import { useInventories } from "~/composables/api/useInventories";
 
 const weaponPlaceholder = "gladius";
 const offHandPlaceholder = "shield";
@@ -10,27 +11,42 @@ const bootsPlaceholder = "leg-armor";
 const PLACEHOLDERS = {
   weapon: weaponPlaceholder,
   offHand: offHandPlaceholder,
-  helm: helmPlaceholder,
+  helmet: helmPlaceholder,
   chest: chestPlaceholder,
   gloves: glovesPlaceholder,
   boots: bootsPlaceholder,
 }
 
-export const usePlayerInventory = ({myInventory}: {myInventory: Inventory}) => {
-  const backpack = ref(Object.entries(myInventory)
-   .filter(([key]) => key.startsWith("slot"))
-    .map(([_, value]) => value));
+export const usePlayerInventory = () => {
+  const { getPlayerInventorySlots, getPlayerEquipment } = useInventories();
+  const playerStore = usePlayerStore();
+  const { playerId } = storeToRefs(playerStore);
+
+  const inventory = ref<InventorySlot[] | null>(null);
+  const equipment = ref<Equipment | null>(null);
+
+  const fetchInventory = async () => {
+    if (playerId.value) {
+      inventory.value = await getPlayerInventorySlots(playerId.value);
+      equipment.value = await getPlayerEquipment(playerId.value);
+    }
+  };
 
   const getEquipmentItem = (key: string): Item => {
-    const item = myInventory[key as keyof Inventory];
-    if (item && typeof item === 'object') {
-      return item as Item;
+    const equipmentSlot = equipment.value?.[key as keyof Equipment];
+
+    if (!equipmentSlot) {
+      return {
+        name: "Empty",
+        icon: `${PLACEHOLDERS[key as keyof typeof PLACEHOLDERS]}`,
+      };
     }
-    return {
-      name: "Empty",
-      icon: `${PLACEHOLDERS[key as keyof typeof PLACEHOLDERS]}`,
-    };
+    
+    return equipmentSlot as Item;
   };
   
-  return { backpack, getEquipmentItem };
+  onMounted(fetchInventory);
+  watch(playerId, fetchInventory);
+
+  return { inventory, equipment, getEquipmentItem, fetchInventory };
 };

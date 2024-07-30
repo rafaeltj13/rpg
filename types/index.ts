@@ -1,15 +1,14 @@
 export type Player = {
-  id?: number;
+  id: number | null;
   created_at?: Date;
   name: string;
   age: number;
   country: string;
   email: string;
   honor: number;
-  quests?: Quest[];
-  completedQuests?: Quest[];
+  quests?: Quest["id"][];
+  completedQuests?: Quest["id"][];
   currentLocation: Location;
-  inventory?: Inventory;
   class?: Class;
   attributes: Attributes;
 };
@@ -31,8 +30,8 @@ export type Attributes = {
   vitality: number;
 };
 
-export type Inventory = {
-  id?: number;
+export type Equipment = {
+  id: number | null;
   created_at?: number;
   player: Player["id"];
   helmet: Item | null;
@@ -41,31 +40,15 @@ export type Inventory = {
   boots: Item | null;
   weapon: Item | null;
   offHand: Item | null;
-  slot1: ItemStack | null;
-  slot2: ItemStack | null;
-  slot3: ItemStack | null;
-  slot4: ItemStack | null;
-  slot5: ItemStack | null;
-  slot6: ItemStack | null;
-  slot7: ItemStack | null;
-  slot8: ItemStack | null;
-  slot9: ItemStack | null;
-  slot10: ItemStack | null;
-  slot11: ItemStack | null;
-  slot12: ItemStack | null;
-  slot13: ItemStack | null;
-  slot14: ItemStack | null;
-  slot15: ItemStack | null;
-  slot16: ItemStack | null;
-  slot17: ItemStack | null;
-  slot18: ItemStack | null;
-  slot19: ItemStack | null;
-  slot20: ItemStack | null;
-};
+}
 
-export type ItemStack = Item & {
-  quantity?: number;
-};
+export type InventorySlot = {
+  id: number | null;
+  created_at?: number;
+  player: Player["id"];
+  item: Item | null;
+  quantity: number;
+}
 
 export type Item = {
   id?: number;

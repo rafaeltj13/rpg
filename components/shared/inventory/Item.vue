@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import type { Item, ItemStack } from "~/types";
+import type { InventorySlot, Item } from "~/types";
 
 defineProps({
   item: {
-    type: Object as PropType<Item | ItemStack>,
+    type: Object as PropType<Item>,
+    required: false,
+  },
+  quantity: {
+    type: Number,
     required: false,
   },
 });
@@ -21,8 +25,8 @@ defineProps({
           <Badge
             variant="secondary"
             class="mt-4"
-            v-if="item && 'quantity' in item && item.quantity"
-            >{{ item.quantity }}</Badge
+            v-if="item && quantity && quantity > 1"
+            >{{ quantity }}</Badge
           >
         </div>
       </div>

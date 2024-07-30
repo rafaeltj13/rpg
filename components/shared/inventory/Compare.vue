@@ -27,7 +27,12 @@ defineProps({
         "
         class="text-md"
       >
-        {{ (item?.strength ?? 0) - (itemToBeCompared?.strength ?? 0) }} Strengh
+        {{
+          (item?.strength ?? 0) - (itemToBeCompared?.strength ?? 0) >= 0
+            ? "+"
+            : ""
+        }}{{ (item?.strength ?? 0) - (itemToBeCompared?.strength ?? 0) }}
+        Strength
       </p>
       <p
         :class="
@@ -39,7 +44,12 @@ defineProps({
         "
         class="text-md"
       >
-        {{ (item?.vitality ?? 0) - (itemToBeCompared?.vitality ?? 0) }} Vitality
+        {{
+          (item?.vitality ?? 0) - (itemToBeCompared?.vitality ?? 0) >= 0
+            ? "+"
+            : ""
+        }}{{ (item?.vitality ?? 0) - (itemToBeCompared?.vitality ?? 0) }}
+        Vitality
       </p>
       <p
         :class="
@@ -51,7 +61,13 @@ defineProps({
         "
         class="text-md"
       >
-        {{ (item?.intelligence ?? 0) - (itemToBeCompared?.intelligence ?? 0) }}
+        {{
+          (item?.intelligence ?? 0) - (itemToBeCompared?.intelligence ?? 0) >= 0
+            ? "+"
+            : ""
+        }}{{
+          (item?.intelligence ?? 0) - (itemToBeCompared?.intelligence ?? 0)
+        }}
         Intelligence
       </p>
       <p
@@ -64,7 +80,11 @@ defineProps({
         "
         class="text-md"
       >
-        {{ (item?.agility ?? 0) - (itemToBeCompared?.agility ?? 0) }} Agility
+        {{
+          (item?.agility ?? 0) - (itemToBeCompared?.agility ?? 0) >= 0
+            ? "+"
+            : ""
+        }}{{ (item?.agility ?? 0) - (itemToBeCompared?.agility ?? 0) }} Agility
       </p>
       <Button class="mx-auto mt-4" variant="default">Equip</Button>
     </div>
