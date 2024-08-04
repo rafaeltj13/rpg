@@ -11,17 +11,20 @@ defineProps({
     required: false,
   },
 });
+
+defineEmits(["equip"]);
 </script>
 
 <template>
-  <div class="flex items-center justify-center gap-4 mt-8 px-24">
+  <div
+    class="flex items-center justify-center gap-4 mt-8 px-24"
+    v-if="item && itemToBeCompared"
+  >
     <SharedInventoryItem :item="item" />
     <div class="min-w-32 flex flex-col items-center justify-center">
       <p
         :class="
-          item?.strength &&
-          itemToBeCompared?.strength &&
-          item?.strength > itemToBeCompared?.strength
+          (item?.strength ?? 0) > (itemToBeCompared?.strength ?? 0)
             ? 'text-green-500'
             : 'text-red-500'
         "
@@ -36,9 +39,7 @@ defineProps({
       </p>
       <p
         :class="
-          item?.vitality &&
-          itemToBeCompared?.vitality &&
-          item?.vitality > itemToBeCompared?.vitality
+          (item?.vitality ?? 0) > (itemToBeCompared?.vitality ?? 0)
             ? 'text-green-500'
             : 'text-red-500'
         "
@@ -53,9 +54,7 @@ defineProps({
       </p>
       <p
         :class="
-          item?.intelligence &&
-          itemToBeCompared?.intelligence &&
-          item?.intelligence > itemToBeCompared?.intelligence
+          (item?.intelligence ?? 0) > (itemToBeCompared?.intelligence ?? 0)
             ? 'text-green-500'
             : 'text-red-500'
         "
@@ -72,9 +71,7 @@ defineProps({
       </p>
       <p
         :class="
-          item?.agility &&
-          itemToBeCompared?.agility &&
-          item?.agility > itemToBeCompared?.agility
+          (item?.agility ?? 0) > (itemToBeCompared?.agility ?? 0)
             ? 'text-green-500'
             : 'text-red-500'
         "
@@ -86,7 +83,9 @@ defineProps({
             : ""
         }}{{ (item?.agility ?? 0) - (itemToBeCompared?.agility ?? 0) }} Agility
       </p>
-      <Button class="mx-auto mt-4" variant="default">Equip</Button>
+      <Button @click="$emit('equip')" class="mx-auto mt-4" variant="default"
+        >Equip</Button
+      >
     </div>
     <SharedInventoryItem :item="itemToBeCompared" />
   </div>

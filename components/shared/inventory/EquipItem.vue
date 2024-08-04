@@ -7,11 +7,18 @@ const props = defineProps({
     type: Object as PropType<Item>,
     required: true,
   },
+  isLoading: {
+    type: Boolean,
+    required: false,
+  },
 });
 </script>
 
 <template>
-  <HoverCard>
+  <div v-if="isLoading">
+    <Skeleton class="w-20 h-20" />
+  </div>
+  <HoverCard v-else>
     <HoverCardTrigger>
       <div
         class="bg-popover border p-2 shadow-xl rounded-lg w-20 h-20 hover:scale-105 scale-100 transition-all cursor-pointer flex items-center justify-center"

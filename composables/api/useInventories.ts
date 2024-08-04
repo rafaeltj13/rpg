@@ -1,5 +1,5 @@
 import { useSupabase } from "~/composables/api/useSupabase";
-import type { Equipment, InventorySlot } from "~/types";
+import type { Equipment, InventorySlot, Item } from "~/types";
 
 export const useInventories = () => {
   const getPlayerEquipment = async (playerId: number) => {
@@ -35,6 +35,7 @@ export const useInventories = () => {
         )
       `)
       .eq("player", playerId)
+      .order("id", { ascending: false })
 
     if (error || !data) {
       console.error("Error fetching player inventory:", error);
@@ -44,8 +45,24 @@ export const useInventories = () => {
     return data as unknown as InventorySlot[];
   };
 
-  return {
+  const updateEquipment = async (playerId: number | null, itemToBeEquipped: Item, slot: keyof Equipment) => {
+    await useSupabase()
+      .from("equipments")
+      .update({ [slot]: itemToBeEquipped.id })
+      .eq("player", playerId)
+  };
+
+  const switchInventorySlot = async (itemToInventory: Item, slotId: number) => {
+    await useSupabase()
+      .from("inventorySlots")
+      .update({ item: itemToInventory.id })
+      .eq("id", slotId)
+  };
+
+  return {  
     getPlayerEquipment,
-    getPlayerInventorySlots
+    getPlayerInventorySlots,
+    updateEquipment,
+    switchInventorySlot
   };
 };
