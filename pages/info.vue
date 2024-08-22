@@ -11,6 +11,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { usePlayer } from "~/composables/api/usePlayer";
+import { useInventories } from "~/composables/api/useInventories";
 
 const loading = ref(false);
 const countries = ref([
@@ -37,6 +38,8 @@ const handleUpdatePlayerInfo = async ({
 }) => {
   loading.value = true;
 
+  console.log({ name, age, country, email: useSessionStore().email });
+
   const player = await usePlayer().createPlayer({
     name,
     age,
@@ -44,7 +47,24 @@ const handleUpdatePlayerInfo = async ({
     email: useSessionStore().email || "",
   });
 
-  if (player) navigateTo("/city");
+  console.log({ player });
+
+  if (!player) {
+    // TODO: Handle error
+    return;
+  }
+
+  if (player.id) {
+    await Promise.all(
+      Array.from({ length: 20 }, (_, i) =>
+        useInventories().createInventorySlot(player.id!)
+      )
+    );
+
+    await useInventories().createEquipment(player.id);
+  }
+
+  navigateTo("/city");
 
   loading.value = false;
 };

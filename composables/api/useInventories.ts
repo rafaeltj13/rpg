@@ -55,14 +55,46 @@ export const useInventories = () => {
   const switchInventorySlot = async (itemToInventory: Item, slotId: number) => {
     await useSupabase()
       .from("inventorySlots")
-      .update({ item: itemToInventory.id })
+      .update({ item: itemToInventory.id }) 
       .eq("id", slotId)
   };
+
+  const createInventorySlot = async (playerId: number) => {
+    const { data, error } = await useSupabase()
+      .from("inventorySlots")
+      .insert({
+        player: playerId,
+        item: null
+      });
+
+    if (error) {
+      console.error("Error creating inventory slot:", error);
+      return null;
+    }
+
+    return data;
+  }
+
+  const createEquipment = async (playerId: number) => {
+    await useSupabase()
+      .from("equipments")
+      .insert({
+        player: playerId,
+        helmet: null,
+        chest: null,
+        boots: null,
+        gloves: null,
+        weapon: null,
+        offHand: null
+      });
+  }
 
   return {  
     getPlayerEquipment,
     getPlayerInventorySlots,
     updateEquipment,
-    switchInventorySlot
+    switchInventorySlot,
+    createInventorySlot,
+    createEquipment
   };
 };

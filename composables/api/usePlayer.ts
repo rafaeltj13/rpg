@@ -21,16 +21,22 @@ export const usePlayer = () => {
       vitality: 0,
     });
 
+    console.log({ attributes });
+
     if (!attributes) {
       console.error("Error creating attributes for player");
       return null;
     }
+
+
 
     const { data, error } = await useSupabase()
         .from("players")    
         .insert([{ name, age, country, email, currentLocation: 1, attributes: attributes.id }])
         .select("*, currentLocation(*), attributes(*)")
         .single();
+
+    console.log({ data, error });
 
     if (error) {
       console.error("Error creating player:", error);

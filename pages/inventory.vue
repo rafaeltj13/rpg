@@ -61,7 +61,7 @@ const handleEquipItem = () => {
 <template>
   <div class="mx-auto">
     <SharedPageTitle title="Inventory" />
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-2 gap-4 h-[28rem]">
       <div class="col-span-1 grid grid-cols-5 gap-4 pr-12">
         <div
           v-for="(inventorySlot, index) in isLoading
