@@ -38,8 +38,5 @@
     "@nuxtjs/tailwindcss": "^6.11.4",
     "shadcn-nuxt": "^0.10.2",
     "typescript": "^5.4.3"
-  },
-  "overrides": {
-    "vue": "latest"
   }
 }
