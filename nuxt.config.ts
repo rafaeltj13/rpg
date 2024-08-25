@@ -1,9 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   app: {
     pageTransition: { name: "page", mode: "out-in" },
   },
+
   modules: [
     "@nuxtjs/tailwindcss",
     "shadcn-nuxt",
@@ -11,6 +13,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@pinia/nuxt",
   ],
+
   shadcn: {
     /**
      * Prefix for all the imported component
@@ -22,13 +25,17 @@ export default defineNuxtConfig({
      */
     componentDir: "./components/ui",
   },
+
   colorMode: {
     classSuffix: "",
   },
+
   googleFonts: {
     families: {
       Cinzel: [400, 500, 600, 700],
       Montserrat: [400, 500, 600, 700],
     },
   },
+
+  compatibilityDate: "2024-08-25",
 });

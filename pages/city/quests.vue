@@ -18,13 +18,13 @@ getQuests();
 <template>
   <div>
     <SharedPageTitle title="Quest Board" />
-    <QuestLoading v-if="isLoading" />
+    <QuestCityLoading v-if="isLoading" />
     <div v-else>
       <h3 class="text-2xl font-semibold pb-4">Available quests</h3>
       <div class="grid grid-cols-8 grid-flow-row gap-8 pb-16">
         <QuestItem v-for="quest of quests" :key="quest.title" :quest="quest" />
       </div>
-      <h3 class="text-2xl font-semibold pb-4">My quests</h3>
+      <h3 class="text-2xl font-semibold pb-4">Finished quests</h3>
       <div class="grid grid-cols-8 grid-flow-row gap-8 pb-16">
         <QuestItem v-for="quest of quests" :key="quest.title" :quest="quest" />
       </div>

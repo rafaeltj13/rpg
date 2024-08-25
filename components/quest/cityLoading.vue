@@ -10,8 +10,6 @@ import Skeleton from "~/components/ui/skeleton/Skeleton.vue";
       <Skeleton class="h-[190px] col-span-2 w-full" />
       <Skeleton class="h-[190px] col-span-2 w-full" />
       <Skeleton class="h-[190px] col-span-2 w-full" />
-      <Skeleton class="h-[190px] col-span-2 w-full" />
-      <Skeleton class="h-[190px] col-span-2 w-full" />
     </div>
   </div>
 </template>

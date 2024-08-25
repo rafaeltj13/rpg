@@ -137,3 +137,11 @@ export type Skill = {
   type: "active" | "passive";
   calculateDamage: (attribute: number) => number;
 };
+
+export type PlayerQuest = {
+  id?: number;
+  created_at?: number;
+  player: Player["id"];
+  quest: Quest["id"];
+  status: 'available' | 'inProgress' | 'completed';
+};
