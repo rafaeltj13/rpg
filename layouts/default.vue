@@ -4,8 +4,22 @@ import { toast } from "vue-sonner";
 import { usePlayer } from "~/composables/api/usePlayer";
 
 const { setSession } = useSessionStore();
+const colorMode = useColorMode();
+
+const backgroundImage = ref("light");
+
+const updateBackgroundImage = () => {
+  if (colorMode.preference === "system" || !colorMode.preference) {
+    backgroundImage.value = `url('/bg-light.png')`;
+  } else {
+    backgroundImage.value = `url('/bg-${colorMode.preference}.png')`;
+  }
+};
 
 onMounted(() => {
+  updateBackgroundImage();
+  watch(() => colorMode.preference, updateBackgroundImage);
+
   useSupabase().auth.onAuthStateChange(async (event, session) => {
     console.log({ event, session });
 
@@ -46,11 +60,18 @@ onMounted(() => {
 </script>
 
 <template>
-  <SharedHeaderGame />
-  <div class="max-w-screen-xl mx-auto pt-32 pb-40">
-    <slot />
-  </div>
-  <div class="fixed z-50 left-1/2 transform -translate-x-1/2 bottom-8">
-    <SharedActionsHub />
+  <div>
+    <div
+      class="bg-cover bg-center h-[100vh] w-full"
+      :style="{ backgroundImage }"
+    >
+      <SharedHeaderGame />
+      <div class="max-w-screen-xl mx-auto pt-32 pb-40">
+        <slot />
+        <div class="fixed z-50 left-1/2 transform -translate-x-1/2 bottom-8">
+          <SharedActionsHub />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
