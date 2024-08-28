@@ -6,11 +6,11 @@ import { usePlayer } from "~/composables/api/usePlayer";
 const { setSession } = useSessionStore();
 const colorMode = useColorMode();
 
-const backgroundImage = ref("light");
+const backgroundImage = ref("");
 
 const updateBackgroundImage = () => {
-  if (colorMode.preference === "system" || !colorMode.preference) {
-    backgroundImage.value = `url('/bg-light.png')`;
+  if (colorMode.preference === "system") {
+    backgroundImage.value = `url('/bg-${colorMode.value}.png')`;
   } else {
     backgroundImage.value = `url('/bg-${colorMode.preference}.png')`;
   }
@@ -18,7 +18,6 @@ const updateBackgroundImage = () => {
 
 onMounted(() => {
   updateBackgroundImage();
-  watch(() => colorMode.preference, updateBackgroundImage);
 
   useSupabase().auth.onAuthStateChange(async (event, session) => {
     console.log({ event, session });
@@ -47,7 +46,7 @@ onMounted(() => {
     });
 
     const player = await usePlayer().getPlayerByEmail(
-      session?.user.email || ""
+      session?.user.email || "",
     );
 
     if (!player) {
@@ -57,14 +56,21 @@ onMounted(() => {
     }
   });
 });
+
+watch(
+  () => colorMode.value,
+  (value) => (backgroundImage.value = `url('/bg-${value}.png')`),
+);
 </script>
 
 <template>
-  <div>
+  <div class="relative">
     <div
       class="bg-cover bg-center h-[100vh] w-full"
+      v-if="backgroundImage"
       :style="{ backgroundImage }"
-    >
+    ></div>
+    <div class="h-[100vh] w-full z-10 absolute top-0">
       <SharedHeaderGame />
       <div class="max-w-screen-xl mx-auto pt-32 pb-40">
         <slot />

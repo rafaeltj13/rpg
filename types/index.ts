@@ -40,7 +40,7 @@ export type Equipment = {
   boots: Item | null;
   weapon: Item | null;
   offHand: Item | null;
-}
+};
 
 export type InventorySlot = {
   id: number | null;
@@ -48,7 +48,7 @@ export type InventorySlot = {
   player: Player["id"];
   item: Item | null;
   quantity: number;
-}
+};
 
 export type Item = {
   id?: number;
@@ -83,7 +83,7 @@ export type Location = {
   npcs: NPC[];
   monsters: Monster[];
   type: LocationType;
-  area: string
+  area: string;
 };
 
 export type LocationType = "city" | "dungeon" | "forest";
@@ -121,12 +121,15 @@ export type Quest = {
   honor?: number;
   gold?: number;
   itens?: Item[];
-  requirements?: [
-    {
-      target: Monster | Item;
-      goal: number;
-    }
-  ];
+};
+
+export type QuestRequirements = {
+  id?: number;
+  created_at?: number;
+  quest: Quest["id"];
+  target: number | Item | Monster;
+  quantity: number;
+  minLevel: number;
 };
 
 export type Skill = {
@@ -143,5 +146,5 @@ export type PlayerQuest = {
   created_at?: number;
   player: Player["id"];
   quest: Quest["id"];
-  status: 'available' | 'inProgress' | 'completed';
+  status: "available" | "inProgress" | "completed";
 };
