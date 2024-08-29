@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useQuests } from "~/composables/api/useQuests";
-import type { Quest } from "~/types";
+import type { Quest } from "~/types/quest";
 
 const playerStore = usePlayerStore();
 const { playerId } = storeToRefs(playerStore);

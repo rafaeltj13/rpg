@@ -1,5 +1,5 @@
 import { useSupabase } from "~/composables/api/useSupabase";
-import type { Location, Quest } from "~/types";
+import type { Quest } from "~/types/quest";
 
 export const useQuests = () => {
   const getPlayerQuests = async (playerId: number) => {

@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import type { Player } from "~/types";
+import type { Player } from "~/types/player";
 
 const PLAYER_DEFAULT_STORE: Player = {
   id: null,
@@ -12,6 +12,7 @@ const PLAYER_DEFAULT_STORE: Player = {
   completedQuests: [],
   currentLocation: {
     id: null,
+    created_at: 0,
     name: "",
     npcs: [],
     monsters: [],
