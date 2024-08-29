@@ -127,9 +127,9 @@ export type QuestRequirements = {
   id?: number;
   created_at?: number;
   quest: Quest["id"];
-  target: number | Item | Monster;
+  targetMonster: Monster["id"];
+  targetItem: Item["id"];
   quantity: number;
-  minLevel: number;
 };
 
 export type Skill = {

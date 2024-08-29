@@ -1,21 +1,34 @@
 <script setup lang="ts">
-// import { quests } from "~/mock/quests";
-import { useSupabase } from "~/composables/api/useSupabase";
+import { useQuests } from "~/composables/api/useQuests";
 import type { Quest } from "~/types";
+
+const playerStore = usePlayerStore();
+const { playerId } = storeToRefs(playerStore);
 
 const quests = ref<Quest[]>([]);
 const isLoading = ref(true);
 
-async function getQuests() {
+async function getQuests(playerId: number) {
   isLoading.value = true;
-  // TODO: get quests from player
-  // const { data } = await useSupabase().from("quests").select();
-  // quests.value = data as Quest[];
+
+  const playerQuests = await useQuests().getPlayerQuests(playerId);
+  quests.value = playerQuests as Quest[];
+
   isLoading.value = false;
 }
 
-getQuests();
-console.log({ quests: quests.value });
+
+onMounted(async () => {
+  if (playerId.value) {
+    await getQuests(playerId.value);
+  }
+});
+
+watch(() => playerId.value, async (newPlayerId) => {
+  if (newPlayerId) {
+    await getQuests(newPlayerId);
+  }
+}, { immediate: true });
 </script>
 
 <template>

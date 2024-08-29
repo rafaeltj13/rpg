@@ -28,8 +28,6 @@ export const usePlayer = () => {
       return null;
     }
 
-
-
     const { data, error } = await useSupabase()
         .from("players")    
         .insert([{ name, age, country, email, currentLocation: 1, attributes: attributes.id }])
