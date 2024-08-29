@@ -17,14 +17,6 @@ export type Player = {
   attributes: Attributes;
 };
 
-export type PlayerQuest = {
-  id?: number;
-  created_at?: number;
-  player: Player["id"] | PlayerQuest;
-  quest: Quest["id"] | Quest;
-  status: "available" | "inProgress" | "completed";
-};
-
 export type Class = {
   id?: number;
   created_at?: number;

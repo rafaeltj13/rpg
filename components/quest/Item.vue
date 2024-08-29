@@ -63,7 +63,7 @@ const props = defineProps<{
               </p>
             </DrawerTitle>
             <DrawerDescription>{{ quest.description }}</DrawerDescription>
-            <div class="flex items-center gap-3 p">
+            <div class="flex items-center gap-4">
               <p class="text-xl font-semibold">
                 {{ quest.honor }}
                 <Icon

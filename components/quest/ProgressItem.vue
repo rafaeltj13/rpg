@@ -9,10 +9,10 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Icon } from "@iconify/vue";
-import type { Quest } from "~/types";
+import type { PlayerQuest } from "~/types/quest";
 
-const props = defineProps<{
-  quest: Quest;
+defineProps<{
+  playerQuest: PlayerQuest;
 }>();
 </script>
 
@@ -22,30 +22,52 @@ const props = defineProps<{
   >
     <Drawer>
       <DrawerTrigger>
-        <div class="flex items-start justify-between gap-8 p-2 w-full">
+        <div
+          class="flex items-start justify-between gap-12 p-2 w-full h-[162px]"
+        >
           <div class="flex flex-col items-start gap-4 text-left">
-            <p class="text-2xl font-semibold">{{ quest.title }}</p>
+            <p class="text-2xl font-semibold">
+              {{ playerQuest?.quest?.title }}
+            </p>
             <p
               class="h-[92px] text-md text-left text-wrap break-words overflow-hidden overflow-ellipsis"
             >
-              {{ quest.description }}
+              {{ playerQuest?.quest?.description }}
             </p>
           </div>
-          <div class="flex items-center gap-3">
-            <p class="text-xl font-semibold">
-              {{ quest.honor }}
+          <div
+            class="flex flex-col items-center justify-between h-full w-[18rem]"
+          >
+            <div class="flex items-center gap-3">
+              <p class="text-xl font-semibold">
+                {{ playerQuest?.quest?.honor }}
+                <Icon
+                  icon="game-icons:vertical-banner"
+                  class="h-[1.5rem] w-[1.5rem] mx-auto"
+                />
+              </p>
+              <p class="text-xl font-semibold">
+                {{ playerQuest?.quest?.gold }}
+                <Icon
+                  icon="game-icons:two-coins"
+                  class="h-[1.5rem] w-[1.5rem] mx-auto"
+                />
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <p class="text-xl font-semibold">
+                {{ playerQuest.currentQuantity }} /
+                {{ playerQuest.quest.requirements.quantity }}
+              </p>
               <Icon
-                icon="game-icons:vertical-banner"
+                :icon="`game-icons:${
+                  playerQuest.quest.requirements.targetItem?.icon
+                    ? playerQuest.quest.requirements.targetItem.icon
+                    : playerQuest.quest.requirements.targetMonster.icon
+                }`"
                 class="h-[1.5rem] w-[1.5rem] mx-auto"
               />
-            </p>
-            <p class="text-xl font-semibold">
-              {{ quest.gold }}
-              <Icon
-                icon="game-icons:two-coins"
-                class="h-[1.5rem] w-[1.5rem] mx-auto"
-              />
-            </p>
+            </div>
           </div>
         </div>
       </DrawerTrigger>
@@ -54,34 +76,49 @@ const props = defineProps<{
           <DrawerHeader>
             <DrawerTitle
               ><p class="text-4xl pb-2">
-                {{ quest.title }}
+                {{ playerQuest?.quest?.title }}
               </p>
             </DrawerTitle>
-            <DrawerDescription>{{ quest.description }}</DrawerDescription>
-            <div class="flex items-center gap-3 p">
-              <p class="text-xl font-semibold">
-                {{ quest.honor }}
+            <DrawerDescription>{{
+              playerQuest?.quest?.description
+            }}</DrawerDescription>
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-4">
+                <p class="text-xl font-semibold">
+                  {{ playerQuest?.quest?.honor }}
+                  <Icon
+                    icon="game-icons:vertical-banner"
+                    class="h-[1.5rem] w-[1.5rem] mx-auto"
+                  />
+                </p>
+                <p class="text-xl font-semibold">
+                  {{ playerQuest?.quest?.gold }}
+                  <Icon
+                    icon="game-icons:two-coins"
+                    class="h-[1.5rem] w-[1.5rem] mx-auto"
+                  />
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="text-xl font-semibold">
+                  {{ playerQuest.currentQuantity }} /
+                  {{ playerQuest.quest.requirements.quantity }}
+                </p>
                 <Icon
-                  icon="game-icons:vertical-banner"
+                  :icon="`game-icons:${
+                    playerQuest.quest.requirements.targetItem?.icon
+                      ? playerQuest.quest.requirements.targetItem.icon
+                      : playerQuest.quest.requirements.targetMonster.icon
+                  }`"
                   class="h-[1.5rem] w-[1.5rem] mx-auto"
                 />
-              </p>
-              <p class="text-xl font-semibold">
-                {{ quest.gold }}
-                <Icon
-                  icon="game-icons:two-coins"
-                  class="h-[1.5rem] w-[1.5rem] mx-auto"
-                />
-              </p>
+              </div>
             </div>
           </DrawerHeader>
           <div
             class="w-full pb-4 px-4 flex items-center justify-center md:justify-start gap-4"
           >
-            <DrawerClose>
-              <Button variant="outline"> Reject </Button>
-            </DrawerClose>
-            <Button size="lg">Accept</Button>
+            <Button variant="outline" size="lg">Forfeit</Button>
           </div>
         </div>
       </DrawerContent>

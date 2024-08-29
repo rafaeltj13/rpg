@@ -1,16 +1,18 @@
 import { useSupabase } from "~/composables/api/useSupabase";
-import type { Quest } from "~/types/quest";
+import type { PlayerQuest } from "~/types/quest";
 
 export const useQuests = () => {
   const getPlayerQuests = async (playerId: number) => {
     const { data, error } = await useSupabase()
       .from("playerQuests")
-      .select(`*, quests(*)`)
-      .eq("player", playerId)
+      .select(`*, quest(*, requirements(*, targetMonster(*), targetItem(*)))`)
+      .eq("player", playerId);
 
     if (error) return [];
 
-    return data as unknown as Quest[];
+    console.log(data);
+
+    return data as unknown as PlayerQuest[];
   };
 
   return {
